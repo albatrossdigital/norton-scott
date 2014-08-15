@@ -14,6 +14,16 @@ $franklin: "franklin-gothic-urw"
 
 //override foundation settings
 $body-font-color: $gray-text
+$form-label-font-size: rem-calc(20)
+$h1-font-size: rem-calc(44)
+$h2-font-size: rem-calc(37)
+$h3-font-size: rem-calc(27)
+$h4-font-size: rem-calc(26)
+$h5-font-size: rem-calc(18)
+$h6-font-size: 1rem
+    
+$header-line-height: 1.4
+
 
 
 
@@ -29,6 +39,51 @@ $body-font-color: $gray-text
     
 h2
     font-family: $franklin
+    
+h3 
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    
+.section-start
+    padding: 40px 0 40px 0
+    
+
+.footer-end
+    padding-bottom: 300px
+    
+.gray-section
+    background-color: $gray-light
+    
+.navy-section
+    background-color: $blue-gray
+    
+.reverse-gothic
+    color: $white
+    font-family: $alternate-gothic
+    text-transform: uppercase
+        
+label
+    font-size: $form-label-font-size
+    
+.gothic
+    color: $gray-text
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    
+.reverse
+    color: $white
+    font-family: $franklin
+    
+    h4
+        font-size: $h4-font-size
+        color: $white
+        font-family: $franklin
+        line-height: $header-line-height
+        font-style: italic
+    
+    
+        
+        
 
 // Or selectively include components
 // @import

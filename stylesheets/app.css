@@ -8344,22 +8344,81 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 21, ../sass/app.sass */
+/* line 31, ../sass/app.sass */
 .custom-panel-2 {
   background-color: yellow;
 }
 
-/* line 24, ../sass/app.sass */
+/* line 34, ../sass/app.sass */
 .bg-video {
   background-image: url(http://placehold.it/2000x400&amp;text=Slide%20Image);
 }
 
-/* line 27, ../sass/app.sass */
+/* line 37, ../sass/app.sass */
 .navy {
   color: #0d5397;
 }
 
-/* line 30, ../sass/app.sass */
+/* line 40, ../sass/app.sass */
 h2 {
   font-family: "franklin-gothic-urw";
+}
+
+/* line 43, ../sass/app.sass */
+h3 {
+  font-family: "alternate-gothic-no-3-d";
+  text-transform: uppercase;
+}
+
+/* line 47, ../sass/app.sass */
+.section-start {
+  padding: 40px 0 40px 0;
+}
+
+/* line 51, ../sass/app.sass */
+.footer-end {
+  padding-bottom: 300px;
+}
+
+/* line 54, ../sass/app.sass */
+.gray-section {
+  background-color: #f4f4f4;
+}
+
+/* line 57, ../sass/app.sass */
+.navy-section {
+  background-color: #3b475a;
+}
+
+/* line 60, ../sass/app.sass */
+.reverse-gothic {
+  color: white;
+  font-family: "alternate-gothic-no-3-d";
+  text-transform: uppercase;
+}
+
+/* line 65, ../sass/app.sass */
+label {
+  font-size: 1.25rem;
+}
+
+/* line 68, ../sass/app.sass */
+.gothic {
+  color: #333333;
+  font-family: "alternate-gothic-no-3-d";
+  text-transform: uppercase;
+}
+
+/* line 73, ../sass/app.sass */
+.reverse {
+  color: white;
+  font-family: "franklin-gothic-urw";
+}
+/* line 77, ../sass/app.sass */
+.reverse h4 {
+  font-size: 1.625rem;
+  color: white;
+  font-family: "franklin-gothic-urw";
+  line-height: 1.4;
+  font-style: italic;
 }
