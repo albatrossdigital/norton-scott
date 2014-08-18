@@ -2,7 +2,6 @@
 @import foundation
 
 //custom variables
-$secondary-color: yellow
 $orange: #f2824c 
 $navy: #0d5397
 $blue-gray: #3b475a
@@ -11,6 +10,11 @@ $white: #ffffff
 $gray-text: #333333
 $alternate-gothic: "alternate-gothic-no-3-d"
 $franklin: "franklin-gothic-urw"
+$pad-1: 1.25rem
+$pad-2: 2.5rem
+$pad-3: 3.75rem
+$pad-4: 5.0rem
+    
 
 //override foundation settings
 $body-font-color: $gray-text
@@ -19,14 +23,59 @@ $h1-font-size: rem-calc(44)
 $h2-font-size: rem-calc(37)
 $h3-font-size: rem-calc(27)
 $h4-font-size: rem-calc(26)
-$h5-font-size: rem-calc(18)
+$h5-font-size: rem-calc(20)
 $h6-font-size: 1rem
     
 $header-line-height: 1.4
 
+// We use these to style paragraphs
+$paragraph-font-family: $franklin
+// $paragraph-font-weight: $font-weight-normal;
+$paragraph-font-size: 1.3rem
+$paragraph-line-height: 1.6
+// $paragraph-margin-bottom: rem-calc(20);
+// $paragraph-aside-font-size: rem-calc(14);
+// $paragraph-aside-line-height: 1.35;
+// $paragraph-aside-font-style: italic;
+// $paragraph-text-rendering: optimizeLegibility;
+
+// We use these to control button text styles.
+// $button-font-family: $body-font-family;
+// $button-font-color: #fff;
+// $button-font-color-alt: #333;
+// $button-font-tny: rem-calc(11);
+// $button-font-sml: rem-calc(13);
+// $button-font-med: rem-calc(16);
+// $button-font-lrg: rem-calc(20);
+// $button-font-weight: $font-weight-normal;
+// $button-font-align: center;
+
+// Background color for the top bar
+$topbar-bg-color: $blue-gray
+// $topbar-bg: $topbar-bg-color;
+
+// Height and margin
+// $topbar-height: 45px;
+// $topbar-margin-bottom: 0;
+
+// Controlling the styles for the title in the top bar
+// $topbar-title-weight: $font-weight-normal;
+// $topbar-title-font-size: rem-calc(17);
 
 
+.contain-to-grid
+    background-color: $topbar-bg-color
 
+.top-bar
+    background-color: $topbar-bg-color
+    
+.contain-to-grid li
+    background-color: $topbar-bg-color
+    
+p
+    line-height: $paragraph-line-height
+    font-size: $paragraph-font-size
+    color: $gray-text
     
 .custom-panel-2
     background-color: $secondary-color
@@ -37,30 +86,48 @@ $header-line-height: 1.4
 .navy
     color: $navy
     
+.blue-gray
+    color: $blue-gray
+    
 h2
     font-family: $franklin
     
 h3 
     font-family: $alternate-gothic
     text-transform: uppercase
+    color: $blue-gray
+
+h5
+    color: $blue-gray
+    font-size: $h5-font-size
     
 .section-start
     padding: 40px 0 40px 0
     
+.section-end
+    margin-bottom: $pad-3
 
 .footer-end
-    padding-bottom: 300px
+    padding-bottom: $pad-4
     
 .gray-section
-    background-color: $gray-light
+    background: $gray-light
+    padding: 1.25rem
+        
+.white-section
+    background: $white
+    padding: 1.25rem
     
 .navy-section
     background-color: $blue-gray
+    padding: 1.25rem
     
 .reverse-gothic
     color: $white
     font-family: $alternate-gothic
     text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
         
 label
     font-size: $form-label-font-size
@@ -69,10 +136,21 @@ label
     color: $gray-text
     font-family: $alternate-gothic
     text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
+    
+.gothic-blue
+    color: $blue-gray
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
+
     
 .reverse
     color: $white
     font-family: $franklin
+    
     
     h4
         font-size: $h4-font-size
@@ -80,9 +158,19 @@ label
         font-family: $franklin
         line-height: $header-line-height
         font-style: italic
+        font-weight: bold
     
+    h5 
+        font-size: $h4-font-size
+        color: $white
+        font-family: $franklin
+        line-height: $header-line-height
     
-        
+strong
+    color: $navy
+    
+.bg-video
+    height: 540px 
         
 
 // Or selectively include components
