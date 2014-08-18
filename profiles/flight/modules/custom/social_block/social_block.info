@@ -1,0 +1,14 @@
+name = Social Networking Block
+description = Adds a simple block for a Facebook/Twitter link
+core = 7.x
+
+dependencies[] = block
+
+files[] = social_block.module
+
+; Information added by Drupal.org packaging script on 2014-04-02
+version = "7.x-2.0-beta1+9-dev"
+core = "7.x"
+project = "flight"
+datestamp = "1396464847"
+

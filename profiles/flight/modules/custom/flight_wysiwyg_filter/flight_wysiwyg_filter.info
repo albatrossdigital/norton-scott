@@ -1,0 +1,14 @@
+name = Flight WYSIWYG Filter
+description = Simple implementation of a WYSIWYG filter
+package = Input filters
+core = 7.x
+
+files[] = flight_wysiwyg_filter.module
+
+
+; Information added by Drupal.org packaging script on 2014-04-02
+version = "7.x-2.0-beta1+9-dev"
+core = "7.x"
+project = "flight"
+datestamp = "1396464847"
+
