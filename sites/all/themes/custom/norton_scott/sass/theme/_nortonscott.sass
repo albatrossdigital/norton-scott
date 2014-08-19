@@ -1,0 +1,222 @@
+//custom variables
+$orange: #f2824c 
+$navy: #0d5397
+$blue-gray: #3b475a
+$gray-light: #f4f4f4
+$white: #ffffff
+$gray-text: #333333
+$alternate-gothic: "alternate-gothic-no-3-d"
+$franklin: "franklin-gothic-urw"
+$pad-1: 1rem
+$pad-2: 2.5rem
+$pad-3: 3.75rem
+$pad-4: 5.0rem
+    
+
+//override foundation settings
+$body-font-color: $gray-text
+$form-label-font-size: rem-calc(20)
+$h1-font-size: rem-calc(44)
+$h2-font-size: rem-calc(37)
+$h3-font-size: rem-calc(30)
+$h4-font-size: rem-calc(26)
+$h5-font-size: rem-calc(20)
+$h6-font-size: 1rem
+    
+$header-line-height: 1.4
+
+// We use these to style paragraphs
+$paragraph-font-family: $franklin
+// $paragraph-font-weight: $font-weight-normal;
+$paragraph-font-size: 1.2rem
+$paragraph-line-height: 1.6
+// $paragraph-margin-bottom: rem-calc(20);
+// $paragraph-aside-font-size: rem-calc(14);
+// $paragraph-aside-line-height: 1.35;
+// $paragraph-aside-font-style: italic;
+// $paragraph-text-rendering: optimizeLegibility;
+
+// We use these to control button text styles.
+// $button-font-family: $body-font-family;
+// $button-font-color: #fff;
+// $button-font-color-alt: #333;
+// $button-font-tny: rem-calc(11);
+// $button-font-sml: rem-calc(13);
+// $button-font-med: rem-calc(16);
+// $button-font-lrg: rem-calc(20);
+// $button-font-weight: $font-weight-normal;
+// $button-font-align: center;
+
+// Background color for the top bar
+$topbar-bg-color: $blue-gray
+// $topbar-bg: $topbar-bg-color;
+
+// Height and margin
+// $topbar-height: 45px;
+// $topbar-margin-bottom: 0;
+
+// Controlling the styles for the title in the top bar
+// $topbar-title-weight: $font-weight-normal;
+// $topbar-title-font-size: rem-calc(17);
+
+
+.contain-to-grid
+    background-color: $topbar-bg-color
+
+.top-bar
+    background-color: $topbar-bg-color
+    
+.contain-to-grid li
+    background-color: $topbar-bg-color
+    
+p
+    line-height: $paragraph-line-height
+    font-size: $paragraph-font-size
+    color: $gray-text
+    
+.custom-panel-2
+    background-color: $secondary-color
+    
+.bg-video
+    background-image: url(http://placehold.it/2000x400&amp;text=Slide%20Image)
+        
+.bg-video h2
+    font-family: $franklin
+    text-transform: none
+    
+
+.navy
+    color: $navy
+    
+.blue-gray
+    color: $blue-gray
+    
+.featured h2
+    font-family: $franklin
+    
+h2 
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    color: $blue-gray
+    
+h3
+    font-family: $franklin
+    font-weight: 300 
+    font-size: $h3-font-size
+    color: $navy
+    padding-top: $pad-1
+
+h5
+    color: $blue-gray
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
+    
+.section-start
+    padding: 40px 0 40px 0
+    
+.section-end
+    margin-bottom: $pad-3
+
+.footer-end
+    padding-bottom: $pad-4
+    
+.gray-section
+    background: $gray-light
+    padding: 1.25rem
+        
+.white-section
+    background: $white
+    padding: 1.25rem
+    
+.navy-section
+    background-color: $blue-gray
+    padding: 1.25rem
+    
+.reverse-gothic
+    color: $white
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
+        
+label
+    font-size: $form-label-font-size
+    
+.gothic
+    color: $gray-text
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    padding-top: $pad-1
+    padding-bottom: $pad-1
+
+    
+.reverse
+    color: $white
+    font-family: $franklin
+    
+    h4
+        font-size: $h4-font-size
+        color: $white
+        font-family: $franklin
+        line-height: $header-line-height
+        font-style: italic
+        font-weight: bold
+    
+    h5 
+    font-size: $h4-font-size
+    color: $white
+    font-family: $franklin
+    line-height: $header-line-height
+    
+strong
+    color: $navy
+    
+.bg-video
+    height: 540px
+
+.breadcrumbs
+    display: none
+
+.webform-confirmation p
+    color: green
+        
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
