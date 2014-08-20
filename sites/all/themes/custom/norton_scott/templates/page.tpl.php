@@ -111,7 +111,7 @@
     <!--/.featured -->
   <div class="bg-video">  
     <section class="l-featured row">
-      <div class="medium-6 medium-centered columns">
+      <div class="medium-8 medium-centered columns">
         <?php print render($page['featured']); ?>
       </div>
     </section>

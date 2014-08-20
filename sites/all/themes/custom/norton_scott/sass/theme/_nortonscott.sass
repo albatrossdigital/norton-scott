@@ -3,21 +3,21 @@ $orange: #f2824c
 $navy: #0d5397
 $blue-gray: #3b475a
 $gray-light: #f4f4f4
-$white: #ffffff
+$white: #fff
 $gray-text: #333333
 $alternate-gothic: "alternate-gothic-no-3-d"
 $franklin: "franklin-gothic-urw"
 $pad-1: 1rem
 $pad-2: 2.5rem
 $pad-3: 3.75rem
-$pad-4: 5.0rem
+$pad-4: 5.5rem
     
 
 //override foundation settings
 $body-font-color: $gray-text
 $form-label-font-size: rem-calc(20)
 $h1-font-size: rem-calc(44)
-$h2-font-size: rem-calc(37)
+$h2-font-size: rem-calc(32)
 $h3-font-size: rem-calc(30)
 $h4-font-size: rem-calc(26)
 $h5-font-size: rem-calc(20)
@@ -27,7 +27,7 @@ $header-line-height: 1.4
 
 // We use these to style paragraphs
 $paragraph-font-family: $franklin
-// $paragraph-font-weight: $font-weight-normal;
+$paragraph-font-weight: 400
 $paragraph-font-size: 1.2rem
 $paragraph-line-height: 1.6
 // $paragraph-margin-bottom: rem-calc(20);
@@ -73,6 +73,7 @@ p
     line-height: $paragraph-line-height
     font-size: $paragraph-font-size
     color: $gray-text
+    font-weight: $paragraph-font-weight
     
 .custom-panel-2
     background-color: $secondary-color
@@ -90,14 +91,28 @@ p
     
 .blue-gray
     color: $blue-gray
-    
-.featured h2
-    font-family: $franklin
+
     
 h2 
     font-family: $alternate-gothic
     text-transform: uppercase
     color: $blue-gray
+    padding-bottom: $pad-2
+    
+.block-bean-about-2 h2
+    font-family: $franklin
+    font-weight: 700
+    font-style: italic
+    padding-top: $pad-4
+    font-size: $h1-font-size
+    color: $white
+    text-align: center
+
+.block-bean-about-2 h3
+    color: $white
+    text-align: center
+    font-weight: 400
+    
     
 h3
     font-family: $franklin
@@ -113,9 +128,6 @@ h5
     padding-top: $pad-1
     padding-bottom: $pad-1
     
-.section-start
-    padding: 40px 0 40px 0
-    
 .section-end
     margin-bottom: $pad-3
 
@@ -124,15 +136,20 @@ h5
     
 .gray-section
     background: $gray-light
-    padding: 1.25rem
+    padding-top: $pad-3
+    padding-bottom: $pad-3
         
 .white-section
     background: $white
     padding: 1.25rem
+    padding-top: $pad-3
+    padding-bottom: $pad-3
     
 .navy-section
     background-color: $blue-gray
     padding: 1.25rem
+    padding-top: $pad-3
+    padding-bottom: $pad-3
     
 .reverse-gothic
     color: $white
@@ -181,6 +198,18 @@ strong
 
 .webform-confirmation p
     color: green
+        
+.reveal-modal
+    width: 40%
+    
+    h2
+        padding-top: $pad-1
+    
+    .button
+        background-color: $orange
+       
+       
+
         
 
 // Or selectively include components
