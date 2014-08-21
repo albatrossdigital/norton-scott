@@ -109,13 +109,20 @@
 
   <?php if (!empty($page['featured'])): ?>
     <!--/.featured -->
-  <div class="bg-video">  
+
+      
+    <video autoplay="" loop="" poster="http://artbees.net/themes/jupiter-demo/wp-content/uploads/2013/10/home-vid-img.jpg" id="bgvid">
+    <source src="" type="video/webm">
+    <source src="./sites/all/themes/custom/norton_scott/images/loop.mp4" type="video/mp4">
+    </video>
+      
+      
     <section class="l-featured row">
       <div class="medium-8 medium-centered columns">
         <?php print render($page['featured']); ?>
       </div>
     </section>
-  </div>
+
     <!--/.l-featured -->
   <?php endif; ?>
     
