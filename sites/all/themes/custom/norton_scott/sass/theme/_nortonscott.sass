@@ -11,7 +11,10 @@ $pad-1: 1rem
 $pad-2: 2.5rem
 $pad-3: 3.75rem
 $pad-4: 5.5rem
-    
+$margin-1: 1rem
+$margin-2: 2.5rem
+$margin-3: 3.75rem
+$margin-4: 5.5rem
 
 //override foundation settings
 $body-font-color: $gray-text
@@ -65,9 +68,27 @@ $topbar-bg-color: $blue-gray
 
 .top-bar
     background-color: $topbar-bg-color
-    
-.contain-to-grid li
+    padding: none
+    margin: none
+        
+#main-nav
     background-color: $topbar-bg-color
+    padding: 0
+    margin: 0
+    
+#main-nav a
+    background-color: $topbar-bg-color
+    font-family: $alternate-gothic
+    font-size: $h5-font-size
+    text-transform: uppercase
+    padding-left: $pad-2
+    padding-right: $pad-2
+    
+#main-nav a:hover
+    background-color: $navy
+    
+#main-nav a:focus
+
     
 p
     line-height: $paragraph-line-height
@@ -88,10 +109,6 @@ p
 
 .navy
     color: $navy
-    
-.blue-gray
-    color: $blue-gray
-
     
 h2 
     font-family: $alternate-gothic
@@ -205,8 +222,34 @@ strong
     h2
         padding-top: $pad-1
     
-    .button
-        background-color: $orange
+.button
+    background-color: $orange
+    font-family: $alternate-gothic
+    font-size: $h5-font-size
+    text-transform: uppercase
+    margin-top: $margin-3
+    margin-bottom: $margin-3
+    
+.blue-gray
+    color: $blue-gray
+   
+.button a:hover
+    background-color: pink
+        
+
+   
+        
+.block-bean-learn-more
+    margin: 0 auto 0 auto
+
+.field-name-post-date
+    color: $blue-gray
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    font-size: $h5-font-size
+
+.more-link
+    margin-left: -9rem
        
        
 

@@ -35,7 +35,7 @@
         <nav class="top-bar" data-topbar data-options="sticky">
           <ul class="title-area">
             <li class="name">
-                <a href="#"><img src="images/icon.png" alt="Norton Scott"></a></li> 
+                <a href="#"><img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></a></li> 
             <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
           </ul>
  
@@ -44,7 +44,7 @@
         <ul class="right">
             <li data-magellan-arrival="about"><a href="#about">About</a></li>
             <li data-magellan-arrival="case-studies"><a href="#case-studies">Case Studies</a></li>
-            <li data magellan-arrival="news"><a href="http://localhost:8083/sandbox/wireframe/#news-section">News</a></li>
+            <li data magellan-arrival="news1"><a href="#news1">News</a></li>
             <li data-magellan-arrival="contact"><a href="#contact">Contact</a></li>
         </ul>
     </section>
@@ -122,11 +122,13 @@
   <?php if (!empty($page['about'])): ?>
     <!--/.about -->
  <div class="gray-section">
+    <a name="about">
     <section class="l-about row">
       <div class="medium-12 columns">
         <?php print render($page['about']); ?>
       </div>
     </section>
+    </a>
   </div>
     <!--/.l-about -->
   <?php endif; ?>
@@ -134,11 +136,13 @@
   <?php if (!empty($page['case_studies'])): ?>
     <!--/.case_studies -->
     <div class="white-section">
+    <a name="case-studies">
     <section class="l-case-studies row">
       <div class="medium-12 columns">
         <?php print render($page['case_studies']); ?>
       </div>
     </section>
+    </a>
     </div>
     <!--/.l-case_studies -->
   <?php endif; ?>
@@ -146,11 +150,13 @@
   <?php if (!empty($page['news'])): ?>
     <!--/.news -->
   <div class="gray-section">
+    <a name="news1">
     <section class="l-news row">
       <div class="medium-12 columns">
         <?php print render($page['news']); ?>
       </div>
     </section>
+    </a>
   </div>
     <!--/.l-news -->
   <?php endif; ?>
@@ -226,6 +232,7 @@
   <?php if (!empty($page['footer_firstcolumn']) || !empty($page['footer_secondcolumn']) || !empty($page['footer_thirdcolumn']) || !empty($page['footer_fourthcolumn'])): ?>
     <!--.footer-sections -->
     <div class="navy-section">
+    <a name="contact">
     <section class="row l-footer-sections">
       <?php if (!empty($page['footer_firstcolumn'])): ?>
         <div class="footer-first medium-7 columns">
@@ -238,6 +245,7 @@
         </div>
       <?php endif; ?>
     </section>
+    </a>
     
     <!--/.footer-sections-->
   <?php endif; ?>
