@@ -112,8 +112,8 @@
 
       
     <video autoplay="" loop="" poster="http://artbees.net/themes/jupiter-demo/wp-content/uploads/2013/10/home-vid-img.jpg" id="bgvid">
-    <source src="" type="video/webm">
-    <source src="./sites/all/themes/custom/norton_scott/images/loop.mp4" type="video/mp4">
+    <source src="./sites/all/themes/custom/norton_scott/assets/crane.webm" type="video/webm">
+    <source src="./sites/all/themes/custom/norton_scott/assets/crane.mp4" type="video/mp4">
     </video>
       
       
