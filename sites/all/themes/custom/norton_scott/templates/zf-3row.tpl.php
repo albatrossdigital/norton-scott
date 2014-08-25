@@ -10,8 +10,8 @@
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-  <div class="row">
-    <div class="medium-7 columns">
+  <div class="row reverse">
+    <div class="medium-8 columns">
     <<?php print $header_wrapper ?> class="group-header<?php print $header_classes; ?>">
       <?php print $header; ?>
     </<?php print $header_wrapper ?>>
@@ -27,7 +27,7 @@
   </div>
 
   <div class="row">
-    <div class="medium-2 columns">
+    <div class="medium-1 columns">
     <<?php print $footer_wrapper ?> class="group-footer<?php print $footer_classes; ?>">
       <?php print $footer; ?>
     </<?php print $footer_wrapper ?>>

@@ -80,7 +80,7 @@ scripts[] = js/scripts.js
 ; You'll use this variable in page.tpl.php:
 ;   <?php print render($page['header']); ?>
 
-regions[header]              = Header
+;regions[header]              = Header
 regions[featured]            = Featured
 regions[about]               = About
 regions[case_studies]        = Case Studies

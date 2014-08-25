@@ -210,21 +210,7 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'acquia_drupal',
-      'username' => 'drupaluser',
-      'password' => '',
-      'host' => '127.0.0.1',
-      'port' => '33067',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+$databases = array();
 
 /**
  * Access control for update.php script.
@@ -256,7 +242,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '2iMnaS4SJqGlXUpUgyzC5jFmX0Ikl_PSw6HZCnvlZXI';
+$drupal_hash_salt = '';
 
 /**
  * Base URL (optional).
@@ -285,7 +271,7 @@ $drupal_hash_salt = '2iMnaS4SJqGlXUpUgyzC5jFmX0Ikl_PSw6HZCnvlZXI';
  *
  * To see what PHP settings are possible, including whether they can be set at
  * runtime (by using ini_set()), read the PHP documentation:
- * http://www.php.net/manual/ini.list.php
+ * http://www.php.net/manual/en/ini.list.php
  * See drupal_environment_initialize() in includes/bootstrap.inc for required
  * runtime settings and the .htaccess file for non-runtime settings. Settings
  * defined there should not be duplicated here so as to avoid conflict issues.
@@ -321,7 +307,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * output filter may not have sufficient memory to process it.  If you
  * experience this issue, you may wish to uncomment the following two lines
  * and increase the limits of these variables.  For more information, see
- * http://php.net/manual/pcre.configuration.php.
+ * http://php.net/manual/en/pcre.configuration.php.
  */
 # ini_set('pcre.backtrack_limit', 200000);
 # ini_set('pcre.recursion_limit', 200000);
@@ -565,3 +551,55 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+/**
+ * Smart start:
+ *
+ * If you would prefer to be redirected to the installation system when a
+ * valid settings.php file is present but no tables are installed, remove
+ * the leading hash sign below.
+ */
+# $conf['pressflow_smart_start'] = TRUE;
+
+
+
+// All Pantheon Environments.
+/*if (defined('PANTHEON_ENVIRONMENT')) {
+  // Use Redis for caching.
+  $conf['redis_client_interface'] = 'PhpRedis';
+  $conf['cache_backends'][] = 'sites/all/modules/contrib/redis/redis.autoload.inc';
+  $conf['cache_default_class'] = 'Redis_Cache';
+  $conf['cache_prefix'] = array('default' => 'pantheon-redis');
+  // Do not use Redis for cache_form (no performance difference).
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  // Use Redis for Drupal locks (semaphore).
+  $conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
+}*/
+
+// Optional Pantheon redis settings.
+/*if (defined('PANTHEON_ENVIRONMENT')) {
+  // High performance - no hook_boot(), no hook_exit(), ignores Drupal IP blacklists.
+  $conf['page_cache_without_database'] = TRUE;
+  $conf['page_cache_invoke_hooks'] = FALSE;
+  // Explicitly set page_cache_maximum_age as database won't be available.
+  $conf['page_cache_maximum_age'] = 300;
+}*/
+
+// Redirect all domains to TLD
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+  if ($_GET['q'] == 'donate' && empty($_SERVER['HTTPS'])) {
+    // Force https for /donate.
+    header('HTTP/1.0 301 Moved Permanently');
+    $query = $_GET;
+    unset($query['q']);
+    $url = 'https://www.architectureforhumanity.org/donate';
+    $url = count($query) ? $url . '?' . http_build_query($query) : $url;
+    header('Location: ' . $url); 
+    exit();
+  }
+  elseif (empty($_SERVER['HTTPS']) && $_SERVER['HTTP_HOST'] != 'architectureforhumanity.org' && $_SERVER['HTTP_HOST'] != 'ja.architectureforhumanity.org') {
+    header('HTTP/1.0 301 Moved Permanently'); 
+    header('Location: http://architectureforhumanity.org'. $_SERVER['REQUEST_URI']); 
+    exit();
+  }
+}
