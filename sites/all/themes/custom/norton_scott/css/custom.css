@@ -10516,19 +10516,20 @@ a.button:hover {
   font-size: 1.25rem;
   width: 30%;
   background-color: red;
+  display: block;
 }
 
-/* line 361, ../sass/theme/_nortonscott.sass */
+/* line 362, ../sass/theme/_nortonscott.sass */
 .webform-component {
   background-color: pink;
 }
 
-/* line 364, ../sass/theme/_nortonscott.sass */
+/* line 365, ../sass/theme/_nortonscott.sass */
 .webform-component-textfield {
   background-color: yellow;
 }
 
-/* line 367, ../sass/theme/_nortonscott.sass */
+/* line 368, ../sass/theme/_nortonscott.sass */
 input#edit-submitted-your-email-, input#edit-submitted-subject, #edit-submitted-message, input#edit-submitted-new-textfield, .gripple {
   background-color: #b1b5bd;
   float: right;
@@ -10536,7 +10537,7 @@ input#edit-submitted-your-email-, input#edit-submitted-subject, #edit-submitted-
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 375, ../sass/theme/_nortonscott.sass */
+  /* line 376, ../sass/theme/_nortonscott.sass */
   p {
     color: red !important;
   }
