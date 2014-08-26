@@ -347,7 +347,14 @@ a.button:hover
 .block-bean h2
   padding-left: 5px
   
-.form-item label
+
+.webform-component
+  background-color: pink
+    
+.webform-component-textfield
+  background-color: yellow
+
+@mixin inline-form-label
   color: $white
   font-family: $alternate-gothic
   text-transform: uppercase
@@ -356,18 +363,25 @@ a.button:hover
   line-spacing: 1px
   font-size: $h5-font-size
   width: 30%
-  background-color: red
-  
-.webform-component
-  background-color: pink
-    
-.webform-component-textfield
-  background-color: yellow
-    
-input#edit-submitted-your-email-, input#edit-submitted-subject, #edit-submitted-message, input#edit-submitted-new-textfield, .gripple
+  background-color: red  
+
+@mixin inline-form-input
   background-color: $gray-blue
   float: right
   width: 70%
+
+@mixin inline-form-container
+  label
+    +inline-form-label
+
+  input.form-text, .form-textarea-wrapper
+    +inline-form-input
+
+
+.webform-client-form.webform-client-form-5
+  .webform-component
+    +inline-form-container
+
   
   
 @media #{$small-only}

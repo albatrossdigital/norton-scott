@@ -1,48 +1,76 @@
-/* line 27, ../../sass/vendor/pie.scss */
-.pie-element, .bordered, .gradient {
-  behavior: url("/sites/all/themes/worcesterk12/css/PIE.htc");
-  position: relative;
-}
+/*
+Error: Undefined mixin 'pie-element'.
+        on line 30 of /home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss, in `pie-element'
+        from line 30 of /home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss
 
-/* line 33, ../../sass/vendor/pie.scss */
-.bordered {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-}
+25: // There are two approaches to creating PIE elements
+26: // The default approach is to make the element position: relative.
+27: .pie-element {
+28:   // relative is the default, so passing relative
+29:   // is redundant, but we do it here for clarity.
+30:   @include pie-element(relative);
+31: }
+32: 
+33: .bordered {
+34:   @include pie; // Because $pie-base-class is set, this results in an extend of .pie-element.
+35:   @include border-radius(5px);
 
-/* line 38, ../../sass/vendor/pie.scss */
-.gradient {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff0000), color-stop(100%, #0000ff));
-  background: -webkit-linear-gradient(#ff0000, #0000ff);
-  background: -moz-linear-gradient(#ff0000, #0000ff);
-  background: -o-linear-gradient(#ff0000, #0000ff);
-  -pie-background: linear-gradient(#ff0000, #0000ff);
-  background: linear-gradient(#ff0000, #0000ff);
-}
-
-/* line 51, ../../sass/vendor/pie.scss */
-.pie-container, .widget {
-  z-index: 0;
-  position: relative;
-}
-
-/* line 55, ../../sass/vendor/pie.scss */
-.z-pie-element, .widget h3 {
-  behavior: url("/sites/all/themes/worcesterk12/css/PIE.htc");
-  z-index: 0;
-}
-
-/* line 69, ../../sass/vendor/pie.scss */
-.has-gradient {
-  behavior: url("/sites/all/themes/worcesterk12/css/PIE.htc");
-  position: relative;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff0000), color-stop(100%, #0000ff));
-  background: -webkit-linear-gradient(#ff0000, #0000ff);
-  background: -moz-linear-gradient(#ff0000, #0000ff);
-  background: -o-linear-gradient(#ff0000, #0000ff);
-  -pie-background: linear-gradient(#ff0000, #0000ff);
-  background: linear-gradient(#ff0000, #0000ff);
-}
+Backtrace:
+/home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss:30:in `pie-element'
+/home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss:30
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:331:in `block in visit_mixin'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:98:in `block in with_mixin'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:98:in `with_mixin'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:329:in `visit_mixin'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:412:in `block (2 levels) in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:412:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:412:in `block in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:410:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/engine.rb:268:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/plugin/compiler.rb:486:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/plugin/compiler.rb:214:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/plugin/compiler.rb:208:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.4.0/lib/sass/plugin/compiler.rb:208:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/sass_compiler.rb:40:in `compile!'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/commands/update_project.rb:49:in `perform'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/bin/compass:44:in `call'
+/var/lib/gems/1.9.1/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
+/usr/local/bin/compass:23:in `load'
+/usr/local/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'pie-element'.\A         on line 30 of /home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss, in `pie-element'\A         from line 30 of /home/alex/workspace/norton-scott/sites/all/themes/custom/norton_scott/sass/vendor/pie.scss\A \A 25: // There are two approaches to creating PIE elements\A 26: // The default approach is to make the element position: relative.\A 27: .pie-element {\A 28:   // relative is the default, so passing relative\A 29:   // is redundant, but we do it here for clarity.\A 30:   @include pie-element(relative);\A 31: }\A 32: \A 33: .bordered {\A 34:   @include pie; // Because $pie-base-class is set, this results in an extend of .pie-element.\A 35:   @include border-radius(5px);"; }
