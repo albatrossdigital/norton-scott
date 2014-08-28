@@ -348,7 +348,6 @@ a.button:hover
 
 .file a
   color: $white
-  
 
 @mixin inline-form-label
   color: $white
@@ -392,8 +391,23 @@ textarea
 button.secondary.button.form-submit a:hover
   background-color: $white
 
+
+
+// Modals
+.reveal-modal-bg
+  a.modal-icon
+    position: absolute
+    top: 50%
+    color: $white
+
+    &#modal-prev
+      left: 10px
+
+    &#modal-next
+      right: 10px
+
   
-  
+// Media queries
 @media #{$small-only}
   .name img
     margin-left: 30px
