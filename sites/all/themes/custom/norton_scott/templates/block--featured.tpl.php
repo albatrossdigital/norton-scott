@@ -44,30 +44,20 @@
  * @ingroup themeable
  */
 ?>
-<div class="row">
-<div class="small-12 columns">
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  
+  <div class="medium-7 medium-push-3 columns">
+    <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-<?php if ($block->subject): ?>
-  <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
-<?php endif;?>
-  <?php print render($title_suffix); ?>
-</div>
-</div>
-</div>
-
-<div class="row">
-  <div class="medium-3 columns">
-    &nbsp;
-  </div>
-    
-  <div class="medium-7 columns">    
+    <?php print render($title_prefix); ?>
+      <?php if ($block->subject): ?>
+    <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
+      <?php endif;?>
+    <?php print render($title_suffix); ?>
+        
     <div class="content"<?php print $content_attributes; ?>>
       <?php print $content ?>
     </div>
   </div>
-  <div class="medium-2 columns">
-    &nbsp;
   </div>
-</div>
+ 
+     

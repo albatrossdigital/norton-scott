@@ -9,8 +9,11 @@
         <nav class="top-bar" data-topbar data-options="sticky">
           <ul class="title-area">
             <li class="name" class="small-1 columns">
-              <img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></li> 
+            <img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></li> 
+            <!-- small menu   
             <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            -->           
+
           </ul>
  
      <section class="top-bar-section">
@@ -92,9 +95,11 @@
       
       
     <section class="l-featured row">
-      <div class="medium-8 medium-centered columns">
+    
+  
         <?php print render($page['featured']); ?>
-      </div>
+  
+    </div>
     </section>
 
     <!--/.l-featured -->
@@ -105,7 +110,7 @@
  <div class="gray-section">
     <a name="about"></a>
     <section class="l-about row">
-      <div class="medium-12 columns">
+      <div class="medium-12  columns">
         <?php print render($page['about']); ?>
       </div>
     </section>
@@ -216,14 +221,15 @@
     <a name="contact"></a>
     <section class="row l-footer-sections">
       <?php if (!empty($page['footer_firstcolumn'])): ?>
-        <div class="footer-first medium-8 columns">
+        <div class="footer-first medium-6 columns">
           <?php print render($page['footer_firstcolumn']); ?>
         </div>
       <?php endif; ?>
       <?php if (!empty($page['footer_secondcolumn'])): ?>
-        <div class="footer-second medium-3 small-12 medium-offset-1 offset columns">
+        <div class="footer-second medium-4 small-9 small-centered columns">
           <?php print render($page['footer_secondcolumn']); ?>
         </div>
+    
       <?php endif; ?>
     </section>
     
