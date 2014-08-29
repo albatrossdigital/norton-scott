@@ -21,7 +21,7 @@
         <ul class="right">
             <li data-magellan-arrival="about"><a href="#about">About</a></li>
             <li data-magellan-arrival="case-studies"><a href="#case-studies">Case Studies</a></li>
-            <li data magellan-arrival="news1"><a href="#news1">News</a></li>
+            <li data magellan-arrival="stories"><a href="#stories">News</a></li>
             <li data-magellan-arrival="contact"><a href="#contact">Contact</a></li>
         </ul>
     </section>
@@ -109,7 +109,7 @@
     <!--/.about -->
  <div class="gray-section">
     <a name="about"></a>
-    <section class="l-about row">
+    <section class="l-about row" data-magellan-destination="about">
       <div class="medium-12  columns">
         <?php print render($page['about']); ?>
       </div>
@@ -123,7 +123,7 @@
     <!--/.case_studies -->
     <div class="white-section">
     <a name="case-studies"></a>
-    <section class="l-case-studies row">
+    <section class="l-case-studies row" data-magellan-destination="case-studies">
       <div class="medium-12 columns">
         <?php print render($page['case_studies']); ?>
       </div>
@@ -136,8 +136,8 @@
   <?php if (!empty($page['news'])): ?>
     <!--/.news -->
   <div class="gray-section">
-    <a name="news1"></a>
-    <section class="l-news row">
+    <a name="stories"></a>
+    <section class="l-news row" data-magellan-destination="stories">
       <div class="medium-12 columns">
         <?php print render($page['news']); ?>
       </div>
@@ -219,7 +219,7 @@
     <!--.footer-sections -->
     <div class="navy-section">
     <a name="contact"></a>
-    <section class="row l-footer-sections">
+    <section class="row l-footer-sections" data-magellan-destination="contact">
       <?php if (!empty($page['footer_firstcolumn'])): ?>
         <div class="footer-first medium-6 columns">
           <?php print render($page['footer_firstcolumn']); ?>
