@@ -38,11 +38,11 @@ $('.view-case-studies', context).once(function() {
 
 // Story read more
 console.log('asdf');
-$('.l-news .body:not(.processed)', context).each(function() {
+$('.l-news .body:not(.processed)').each(function() {
   var $body = $(this);
   console.log('s')
   $body.find('p:not(:first)').hide();
-  var $more = $('<a href="">Read More</a>').bind('click', function(e) {
+  var $more = $('<a href="" clas>Read More</a>').bind('click', function(e) {
     $(this).parent().find('p').show();
     e.preventDefault();
   });
