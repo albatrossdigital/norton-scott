@@ -147,15 +147,7 @@
     <!--/.l-news -->
   <?php endif; ?>
 
-  <?php if ($messages && !$zurb_foundation_messages_modal): ?>
-    <!--/.l-messages -->
-    <section class="l-messages row">
-      <div class="medium-12 columns">
-        <?php if ($messages): print $messages; endif; ?>
-      </div>
-    </section>
-    <!--/.l-messages -->
-  <?php endif; ?>
+  
 
   <?php if (!empty($page['help'])): ?>
     <!--/.l-help -->
@@ -218,6 +210,15 @@
   <?php if (!empty($page['footer_firstcolumn']) || !empty($page['footer_secondcolumn']) || !empty($page['footer_thirdcolumn']) || !empty($page['footer_fourthcolumn'])): ?>
     <!--.footer-sections -->
     <div class="navy-section">
+      <?php if ($messages && !$zurb_foundation_messages_modal): ?>
+    <!--/.l-messages -->
+    <section class="l-messages row">
+      <div class="medium-12 columns">
+        <?php if ($messages): print $messages; endif; ?>
+      </div>
+    </section>
+    <!--/.l-messages -->
+  <?php endif; ?>
     <a name="contact"></a>
     <section class="row l-footer-sections" data-magellan-destination="contact">
       <?php if (!empty($page['footer_firstcolumn'])): ?>

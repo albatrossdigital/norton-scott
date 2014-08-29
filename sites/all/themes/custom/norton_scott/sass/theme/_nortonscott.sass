@@ -16,7 +16,7 @@ $pad-4: 5.5rem
 $margin-1: 1rem
 $margin-2: 2.5rem
 $margin-3: 3.75rem
-$margin-4: 5.5remå
+$margin-4: 5.5rem
 
 //override foundation settings//custom variables
 $orange: #f2824c 
@@ -82,9 +82,8 @@ $topbar-bg-color: $blue-gray
 .top-bar
   background-color: $topbar-bg-color
   
-  
-.top-bar a
-  background-color: $topbar-bg-color
+  a
+    background-color: $topbar-bg-color
   
 .l-featured
   background-color: $gray-light
@@ -96,37 +95,46 @@ $topbar-bg-color: $blue-gray
   margin: 0
   height: 60px
    
-  
-#main-nav a
-  background-color: $topbar-bg-color
-  font-family: $alternate-gothic
-  font-size: $h5-font-size
-  text-transform: uppercase
-  padding-left: 23px
-  padding-right: 23px
-  padding-top: 10px
-  line-spacing: 1px
+  a
+    background-color: $topbar-bg-color
+    font-family: $alternate-gothic
+    font-size: $h5-font-size
+    text-transform: uppercase
+    padding-left: 23px
+    padding-right: 23px
+    padding-top: 10px
+    line-spacing: 1px
    
    
-.top-bar-section a:hover
-  background-color: $topbar-bg-color
+.top-bar-section 
+  a
+    &:hover
+      background-color: $topbar-bg-color
   
-#main-nav a:hover
-  background-color: $gray-light
-  border-bottom-style: solid
-  border-bottom-color: $orange
-  border-bottom-width: 5px
-  margin-bottom: -15px
-  color: $topbar-bg-color
- 
-  
-  
-#main-nav a:focus
-  
+#main-nav 
+  a
+    &:hover
+      background-color: $gray-light
+      border-bottom-style: solid
+      border-bottom-color: $orange
+      border-bottom-width: 5px
+      margin-bottom: -15px
+      color: $topbar-bg-color
+      
+  li.active a 
+    background-color: $gray-light
+    border-bottom-style: solid
+    border-bottom-color: $orange
+    border-bottom-width: 5px
+    margin-bottom: -15px
+    color: $topbar-bg-color
   
 .name
   padding-top: 10px
   padding-bottom: 10px
+  
+.form-required
+  display: none
 
   
 p
@@ -167,6 +175,16 @@ h5
   padding-bottom: $pad-1
   line-spacing: 2px
   
+.news-read-more
+  color: $blue-gray
+  font-family: $alternate-gothic
+  text-transform: uppercase
+  padding-top: $pad-1
+  padding-bottom: $pad-1
+  line-spacing: 2px
+  font-size: $h5-font-size
+  
+  
   
 video#bgvid
   min-width: 100% 
@@ -183,30 +201,29 @@ video#bgvid
   
 
 .navy
-  color: $navy
+  color: $navy  
   
-.block-bean-about-2
+.block-bean-about-2 
   margin-top: -500px
   
-.block-bean-about-2 h2
-  font-family: $franklin
-  font-weight: 700
-  font-style: italic
-  padding-top: $pad-4
-  font-size: $h1-font-size
-  color: $white
-  text-align: center
-  text-transform: none
-
-
-.block-bean-about-2 h3
-  color: $white
-  font-weight: 400
-  font-size: $h4-font-size
-  padding-right: $pad-1
+  h2
+    font-family: $franklin
+    font-weight: 700
+    font-style: italic
+    padding-top: $pad-4
+    font-size: $h1-font-size
+    color: $white
+    text-align: center
+    text-transform: none
   
-#block-bean-about-2 a.button
-  margin-bottom: 60px
+  h3
+    color: $white
+    font-weight: 400
+    font-size: $h4-font-size
+    padding-right: $pad-1
+  
+  a.button
+    margin-bottom: 60px
    
 .section-end
   margin-bottom: $pad-3
@@ -392,21 +409,49 @@ textarea
   
 button.secondary.button.form-submit a:hover
   background-color: $white
-
+  
 
 
 // Modals
+@mixin icomoon
+  font-family: 'icomoon'
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+
+
 .reveal-modal-bg
   a.modal-icon
     position: absolute
     top: 50%
     color: $white
+//  text-indent: -1000em
+//  overflow: hidden
+    +icomoon
 
     &#modal-prev
       left: 10px
+      
+      &:before
+        content: "\f053"
 
     &#modal-next
       right: 10px
+      &:before
+        content: "\f054"
+      
+.reveal-modal
+  h2
+    text-align: center
+  
+img.file-icon
+  padding-right: 10px
+  
+
+  
 
   
 // Media queries
