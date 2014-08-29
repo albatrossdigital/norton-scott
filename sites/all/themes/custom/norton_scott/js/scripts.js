@@ -60,6 +60,7 @@ $('.l-news .body:not(.processed)').each(function() {
 // Update action prop
 $('.webform-client-form').attr('action', '/#contact');
 
+
 // Read more button
 $(".l-featured .button").bind('click', function(e) {
     $('html, body').animate({
@@ -67,6 +68,15 @@ $(".l-featured .button").bind('click', function(e) {
     }, 1000);
     e.preventDefault();
 });
+
+
+// Add additional padding to footer
+var windowHeight = $(window).height();
+var sectionHeight = $('.navy-section').height();
+if (windowHeight - sectionHeight > 100) {
+  $('.navy-section').css('padding-bottom', windowHeight - sectionHeight - 100 + 'px');
+}
+
 
 
     }
