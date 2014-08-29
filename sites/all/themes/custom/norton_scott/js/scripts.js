@@ -43,11 +43,25 @@ $('.l-news .body:not(.processed)').each(function() {
   console.log('s')
   $body.find('p:not(:first)').hide();
   var $more = $('<a href="" class="news-read-more">Read More</a>').bind('click', function(e) {
-    $(this).parent().find('p').show();
+    if ($(this).text() == 'Read More') {
+      $(this).parent().find('p').show();
+      $(this).text('Collapse').hide();
+    }
+    else {
+      $(this).parent().find('p:not(:first)').hide();
+      $(this).text('Read More');
+    }
     e.preventDefault();
   });
   $body.append($more).addClass('processed');
 });
+
+
+// Update action prop
+$('.webform-client-form').attr('action', '/#contact');
+
+
+
 
     }
   };
