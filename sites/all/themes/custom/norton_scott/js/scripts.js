@@ -15,7 +15,7 @@ $('.view-case-studies', context).once(function() {
     });
     var $next = $('<a class="modal-icon" id="modal-prev">&gt;</a>');
     $next.bind('click', function(e) {
-      modalClick(e, 1);
+      modalClick(e, 1);6
     });
 
     var modalClick = function(e, step) {
@@ -42,7 +42,7 @@ $('.l-news .body:not(.processed)').each(function() {
   var $body = $(this);
   console.log('s')
   $body.find('p:not(:first)').hide();
-  var $more = $('<a href="" clas>Read More</a>').bind('click', function(e) {
+  var $more = $('<a href="" class="news-read-more">Read More</a>').bind('click', function(e) {
     $(this).parent().find('p').show();
     e.preventDefault();
   });
