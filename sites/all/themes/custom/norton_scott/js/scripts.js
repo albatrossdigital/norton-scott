@@ -60,7 +60,13 @@ $('.l-news .body:not(.processed)').each(function() {
 // Update action prop
 $('.webform-client-form').attr('action', '/#contact');
 
-
+// Read more button
+$(".l-featured .button").bind('click', function(e) {
+    $('html, body').animate({
+        scrollTop: $(".l-about").offset().top - 70
+    }, 1000);
+    e.preventDefault();
+});
 
 
     }
