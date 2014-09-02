@@ -26,7 +26,6 @@ $('.view-case-studies', context).once(function() {
       var max = $container.length;
       index = (index < 0) ? max-1 : index;
       index = (index >= max) ? 0 : index;
-      console.log(index);
       $('.view-case-studies ul li:eq('+index+') a').trigger('click');
       e.preventDefault();
     }
@@ -37,10 +36,8 @@ $('.view-case-studies', context).once(function() {
 
 
 // Story read more
-console.log('asdf');
 $('.l-news .body:not(.processed)').each(function() {
   var $body = $(this);
-  console.log('s')
   $body.find('p:not(:first)').hide();
   var $more = $('<a href="" class="news-read-more">Read More</a>').bind('click', function(e) {
     if ($(this).text() == 'Read More') {
