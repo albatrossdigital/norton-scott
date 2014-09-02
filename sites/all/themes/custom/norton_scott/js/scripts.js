@@ -74,7 +74,7 @@ $(".l-featured .button").bind('click', function(e) {
 var windowHeight = $(window).height();
 var sectionHeight = $('.navy-section').height();
 if (windowHeight - sectionHeight > 100) {
-  $('.navy-section').css('padding-bottom', windowHeight - sectionHeight - 100 + 'px');
+  $('.navy-section').css('padding-bottom', windowHeight - sectionHeight - 20 + 'px');
 }
 
 
