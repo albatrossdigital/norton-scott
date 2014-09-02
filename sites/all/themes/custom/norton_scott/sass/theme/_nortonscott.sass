@@ -128,10 +128,25 @@ $topbar-bg-color: $blue-gray
     border-bottom-width: 5px
     margin-bottom: -15px
     color: $topbar-bg-color
-  
+    
+  li.name.active a
+    background-color: transparent
+    border-bottom-style: none
+    
+  img
+    background-color: transparent
+    border-bottom-style: none
+      
+
 .name
   padding-top: 10px
   padding-bottom: 10px
+  
+.title-area img
+  a
+    &:hover 
+    background-color: red
+      
   
 .form-required
   display: none
@@ -301,9 +316,14 @@ strong
 ul.pager-load-more
   margin-top: $margin-2
   margin-bottom: $margin-3
-  
+
+
+
+ 
+
 .pager-load-more a:hover
-  background-color: pink
+  background-color: $orange
+  +opacity(0.9)
   
 .blue-gray
   color: $blue-gray
@@ -321,6 +341,12 @@ a.button:hover
   text-transform: uppercase
   font-size: $h5-font-size
   line-spacing: 1px
+
+.views-field.views-field-title
+  a    
+    h5  
+      &:hover
+        color: $navy
 
 .field-name-node-link a
   color: $navy
@@ -409,6 +435,7 @@ textarea
   
   &:hover
     background-color: $white
+    color: $blue-gray
     
 
 
