@@ -76,6 +76,62 @@ $topbar-bg-color: $blue-gray
 // $topbar-bg: $topbar-bg-color;
 
 
+
+
+.navy
+  color: $navy
+  
+.section-end
+  margin-bottom: $pad-3
+
+.footer-end
+  padding-bottom: $pad-4
+  
+.gray-section
+  background: $gray-light
+  padding-top: $pad-3
+  padding-bottom: $pad-3
+    
+.white-section
+  background: $white
+  padding: 1.25rem
+  padding-top: $pad-3
+  padding-bottom: $pad-3
+  
+.navy-section
+  background-color: $blue-gray
+  padding: 1.25rem
+  padding-top: $pad-3
+  padding-bottom: $pad-3
+
+.gothic
+  color: $gray-text
+  font-family: $alternate-gothic
+  text-transform: uppercase
+  padding-top: $pad-1
+  padding-bottom: $pad-1
+  line-spacing: 1px
+
+  
+.reverse 
+  color: $white
+  font-family: $franklin
+  
+  h5 
+  color: $white
+  
+strong
+  color: $navy
+  
+.breadcrumbs
+  display: none
+
+.blue-gray
+  color: $blue-gray
+
+
+//main navigation  and top bar ************************ 
+
 .contain-to-grid
   background-color: $topbar-bg-color
 
@@ -85,10 +141,6 @@ $topbar-bg-color: $blue-gray
   a
     background-color: $topbar-bg-color
   
-.l-featured
-  background-color: $gray-light
-   
-    
 #main-nav
   background-color: $topbar-bg-color
   padding: 0
@@ -110,7 +162,7 @@ $topbar-bg-color: $blue-gray
   a
     &:hover
       background-color: $topbar-bg-color
-  
+
 #main-nav 
   a
     &:hover
@@ -146,12 +198,30 @@ $topbar-bg-color: $blue-gray
   a
     &:hover 
     background-color: red
+
       
+    
+//Featured Video area
+.l-featured
+  background-color: $gray-light   
   
-.form-required
-  display: none
+video#bgvid
+  min-width: 100% 
+  width: auto
+  height: auto
+  z-index: -100
+  background: url(polina.jpg) no-repeat
+  background-size: cover
+
+    
+.bg-video h2
+  font-family: $franklin
+  text-transform: none
 
   
+
+
+//content and headlines ***********************
 p
   line-height: $paragraph-line-height
   font-size: $paragraph-font-size
@@ -165,14 +235,12 @@ h2
   padding-bottom: $pad-2
   letter-spacing: 1px
   
-  
 h3
   font-family: $franklin
   font-weight: 300 
   font-size: $h3-font-size
   color: $navy
   padding-top: $pad-1
-  
   
 h4
   font-size: $h4-font-size
@@ -190,6 +258,8 @@ h5
   padding-bottom: $pad-1
   line-spacing: 2px
   
+
+//buttons and links ***********************
 .news-read-more
   color: $blue-gray
   font-family: $alternate-gothic
@@ -198,102 +268,6 @@ h5
   padding-bottom: $pad-1
   line-spacing: 2px
   font-size: $h5-font-size
-  
-  
-  
-video#bgvid
-  min-width: 100% 
-  width: auto
-  height: auto
-  z-index: -100
-  background: url(polina.jpg) no-repeat
-  background-size: cover
-
-    
-.bg-video h2
-  font-family: $franklin
-  text-transform: none
-  
-
-.navy
-  color: $navy  
-  
-.block-bean-about-2 
-  margin-top: -500px
-  
-  h2
-    font-family: $franklin
-    font-weight: 700
-    font-style: italic
-    padding-top: $pad-4
-    font-size: $h1-font-size
-    color: $white
-    text-align: center
-    text-transform: none
-  
-  h3
-    color: $white
-    font-weight: 400
-    font-size: $h4-font-size
-    padding-right: $pad-1
-  
-  a.button
-    margin-bottom: 60px
-   
-.section-end
-  margin-bottom: $pad-3
-
-.footer-end
-  padding-bottom: $pad-4
-  
-.gray-section
-  background: $gray-light
-  padding-top: $pad-3
-  padding-bottom: $pad-3
-    
-.white-section
-  background: $white
-  padding: 1.25rem
-  padding-top: $pad-3
-  padding-bottom: $pad-3
-  
-.navy-section
-  background-color: $blue-gray
-  padding: 1.25rem
-  padding-top: $pad-3
-  padding-bottom: $pad-3
-    
-label
-  font-size: $form-label-font-size
-  
-.gothic
-  color: $gray-text
-  font-family: $alternate-gothic
-  text-transform: uppercase
-  padding-top: $pad-1
-  padding-bottom: $pad-1
-  line-spacing: 1px
-
-  
-.reverse 
-  color: $white
-  font-family: $franklin
-  
-  h5 
-  color: $white
-  
-strong
-  color: $navy
-  
-.breadcrumbs
-  display: none
-
-.webform-confirmation p
-  color: green
-
-  
-  h2
-    padding-top: $pad-1
   
 .button
   background-color: $orange
@@ -316,25 +290,50 @@ strong
 ul.pager-load-more
   margin-top: $margin-2
   margin-bottom: $margin-3
-
-
-
- 
-
+  
 .pager-load-more a:hover
   background-color: $orange
   +opacity(0.9)
   
-.blue-gray
-  color: $blue-gray
-   
 a.button:hover
   background-color: $gray-light
   color: $topbar-bg-color
-    
+  
+
+  
+  
+  
+
+  
+
+//About section **********************
+.block-bean-about-2 
+  margin-top: -500px
+  
+  h2
+    font-family: $franklin
+    font-weight: 700
+    font-style: italic
+    padding-top: $pad-4
+    font-size: $h1-font-size
+    color: $white
+    text-align: center
+    text-transform: none
+  
+  h3
+    color: $white
+    font-weight: 400
+    font-size: $h4-font-size
+    padding-right: $pad-1
+  
+  a.button
+    margin-bottom: 60px
+       
 .block-bean-learn-more
   margin: 0 auto 0 auto
 
+
+//case studies section **********************
 .field-name-post-date, .field-name-node-link a
   color: $blue-gray
   font-family: $alternate-gothic
@@ -354,7 +353,26 @@ a.button:hover
 .field-name-node-link 
   padding-top: $pad-1
   padding-bottom: $pad-2
+  
+  .file-size
+  display: none
+
+.file 
+  a
+    color: $white
+  
+  img
+    height: 30px
+    margin-left: -10px
      
+
+//Contact Form ***********************
+.form-required
+  display: none
+
+label
+  font-size: $form-label-font-size
+  
 .block-webform h2
   color: $white
 
@@ -370,10 +388,8 @@ a.button:hover
     margin-top: $margin-2
     line-height: 1.5em
   
-
 .block-bean-contact-info
   margin-top: 4.25rem
-  
   
 .block-bean-client-login, .block-bean-partner-login
   margin-top: 3rem
@@ -386,13 +402,6 @@ a.button:hover
   margin-bottom: 5px
   margin-left: -15px
   background-color: $gray-blue-dk
-  
-  
-.file-size
-  display: none
-
-.file a
-  color: $white
 
 @mixin inline-form-label
   color: $white

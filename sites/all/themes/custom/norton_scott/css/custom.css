@@ -10177,33 +10177,98 @@ i[class^="fa"] {
   margin-top: -1.3125rem;
 }
 
-/* line 79, ../sass/theme/_nortonscott.sass */
+/* line 81, ../sass/theme/_nortonscott.sass */
+.navy {
+  color: #0d5397;
+}
+
+/* line 84, ../sass/theme/_nortonscott.sass */
+.section-end {
+  margin-bottom: 3.75rem;
+}
+
+/* line 87, ../sass/theme/_nortonscott.sass */
+.footer-end {
+  padding-bottom: 5.5rem;
+}
+
+/* line 90, ../sass/theme/_nortonscott.sass */
+.gray-section {
+  background: #f4f4f4;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+/* line 95, ../sass/theme/_nortonscott.sass */
+.white-section {
+  background: white;
+  padding: 1.25rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+/* line 101, ../sass/theme/_nortonscott.sass */
+.navy-section {
+  background-color: #3b475a;
+  padding: 1.25rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+/* line 107, ../sass/theme/_nortonscott.sass */
+.gothic {
+  color: #333333;
+  font-family: "alternate-gothic-no-3-d";
+  text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-spacing: 1px;
+}
+
+/* line 116, ../sass/theme/_nortonscott.sass */
+.reverse {
+  color: white;
+  font-family: "franklin-gothic-urw";
+  color: white;
+}
+
+/* line 123, ../sass/theme/_nortonscott.sass */
+strong {
+  color: #0d5397;
+}
+
+/* line 126, ../sass/theme/_nortonscott.sass */
+.breadcrumbs {
+  display: none;
+}
+
+/* line 129, ../sass/theme/_nortonscott.sass */
+.blue-gray {
+  color: #3b475a;
+}
+
+/* line 135, ../sass/theme/_nortonscott.sass */
 .contain-to-grid {
   background-color: #3b475a;
 }
 
-/* line 82, ../sass/theme/_nortonscott.sass */
+/* line 138, ../sass/theme/_nortonscott.sass */
 .top-bar {
   background-color: #3b475a;
 }
-/* line 85, ../sass/theme/_nortonscott.sass */
+/* line 141, ../sass/theme/_nortonscott.sass */
 .top-bar a {
   background-color: #3b475a;
 }
 
-/* line 88, ../sass/theme/_nortonscott.sass */
-.l-featured {
-  background-color: #f4f4f4;
-}
-
-/* line 92, ../sass/theme/_nortonscott.sass */
+/* line 144, ../sass/theme/_nortonscott.sass */
 #main-nav {
   background-color: #3b475a;
   padding: 0;
   margin: 0;
   height: 60px;
 }
-/* line 98, ../sass/theme/_nortonscott.sass */
+/* line 150, ../sass/theme/_nortonscott.sass */
 #main-nav a {
   background-color: #3b475a;
   font-family: "alternate-gothic-no-3-d";
@@ -10215,12 +10280,12 @@ i[class^="fa"] {
   line-spacing: 1px;
 }
 
-/* line 111, ../sass/theme/_nortonscott.sass */
+/* line 163, ../sass/theme/_nortonscott.sass */
 .top-bar-section a:hover {
   background-color: #3b475a;
 }
 
-/* line 116, ../sass/theme/_nortonscott.sass */
+/* line 168, ../sass/theme/_nortonscott.sass */
 #main-nav a:hover {
   background-color: #f4f4f4;
   border-bottom-style: solid;
@@ -10229,7 +10294,7 @@ i[class^="fa"] {
   margin-bottom: -15px;
   color: #3b475a;
 }
-/* line 124, ../sass/theme/_nortonscott.sass */
+/* line 176, ../sass/theme/_nortonscott.sass */
 #main-nav li.active a {
   background-color: #f4f4f4;
   border-bottom-style: solid;
@@ -10238,34 +10303,50 @@ i[class^="fa"] {
   margin-bottom: -15px;
   color: #3b475a;
 }
-/* line 132, ../sass/theme/_nortonscott.sass */
+/* line 184, ../sass/theme/_nortonscott.sass */
 #main-nav li.name.active a {
   background-color: transparent;
   border-bottom-style: none;
 }
-/* line 136, ../sass/theme/_nortonscott.sass */
+/* line 188, ../sass/theme/_nortonscott.sass */
 #main-nav img {
   background-color: transparent;
   border-bottom-style: none;
 }
 
-/* line 141, ../sass/theme/_nortonscott.sass */
+/* line 193, ../sass/theme/_nortonscott.sass */
 .name {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-/* line 146, ../sass/theme/_nortonscott.sass */
+/* line 198, ../sass/theme/_nortonscott.sass */
 .title-area img a {
   background-color: red;
 }
 
-/* line 151, ../sass/theme/_nortonscott.sass */
-.form-required {
-  display: none;
+/* line 205, ../sass/theme/_nortonscott.sass */
+.l-featured {
+  background-color: #f4f4f4;
 }
 
-/* line 155, ../sass/theme/_nortonscott.sass */
+/* line 208, ../sass/theme/_nortonscott.sass */
+video#bgvid {
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background: url(polina.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* line 217, ../sass/theme/_nortonscott.sass */
+.bg-video h2 {
+  font-family: "franklin-gothic-urw";
+  text-transform: none;
+}
+
+/* line 225, ../sass/theme/_nortonscott.sass */
 p {
   line-height: 1.6;
   font-size: 1.25rem;
@@ -10273,7 +10354,7 @@ p {
   font-weight: 400;
 }
 
-/* line 161, ../sass/theme/_nortonscott.sass */
+/* line 231, ../sass/theme/_nortonscott.sass */
 h2 {
   font-family: "alternate-gothic-no-3-d";
   text-transform: uppercase;
@@ -10282,7 +10363,7 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* line 169, ../sass/theme/_nortonscott.sass */
+/* line 238, ../sass/theme/_nortonscott.sass */
 h3 {
   font-family: "franklin-gothic-urw";
   font-weight: 300;
@@ -10291,7 +10372,7 @@ h3 {
   padding-top: 1rem;
 }
 
-/* line 177, ../sass/theme/_nortonscott.sass */
+/* line 245, ../sass/theme/_nortonscott.sass */
 h4 {
   font-size: 1.625rem;
   color: #0d5397;
@@ -10301,7 +10382,7 @@ h4 {
   line-height: 1.55em;
 }
 
-/* line 185, ../sass/theme/_nortonscott.sass */
+/* line 253, ../sass/theme/_nortonscott.sass */
 h5 {
   color: #3b475a;
   font-family: "alternate-gothic-no-3-d";
@@ -10311,7 +10392,7 @@ h5 {
   line-spacing: 2px;
 }
 
-/* line 193, ../sass/theme/_nortonscott.sass */
+/* line 263, ../sass/theme/_nortonscott.sass */
 .news-read-more {
   color: #3b475a;
   font-family: "alternate-gothic-no-3-d";
@@ -10322,129 +10403,7 @@ h5 {
   font-size: 1.25rem;
 }
 
-/* line 204, ../sass/theme/_nortonscott.sass */
-video#bgvid {
-  min-width: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  background: url(polina.jpg) no-repeat;
-  background-size: cover;
-}
-
-/* line 213, ../sass/theme/_nortonscott.sass */
-.bg-video h2 {
-  font-family: "franklin-gothic-urw";
-  text-transform: none;
-}
-
-/* line 218, ../sass/theme/_nortonscott.sass */
-.navy {
-  color: #0d5397;
-}
-
-/* line 221, ../sass/theme/_nortonscott.sass */
-.block-bean-about-2 {
-  margin-top: -500px;
-}
-/* line 224, ../sass/theme/_nortonscott.sass */
-.block-bean-about-2 h2 {
-  font-family: "franklin-gothic-urw";
-  font-weight: 700;
-  font-style: italic;
-  padding-top: 5.5rem;
-  font-size: 2.75rem;
-  color: white;
-  text-align: center;
-  text-transform: none;
-}
-/* line 234, ../sass/theme/_nortonscott.sass */
-.block-bean-about-2 h3 {
-  color: white;
-  font-weight: 400;
-  font-size: 1.625rem;
-  padding-right: 1rem;
-}
-/* line 240, ../sass/theme/_nortonscott.sass */
-.block-bean-about-2 a.button {
-  margin-bottom: 60px;
-}
-
-/* line 243, ../sass/theme/_nortonscott.sass */
-.section-end {
-  margin-bottom: 3.75rem;
-}
-
-/* line 246, ../sass/theme/_nortonscott.sass */
-.footer-end {
-  padding-bottom: 5.5rem;
-}
-
-/* line 249, ../sass/theme/_nortonscott.sass */
-.gray-section {
-  background: #f4f4f4;
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-
-/* line 254, ../sass/theme/_nortonscott.sass */
-.white-section {
-  background: white;
-  padding: 1.25rem;
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-
-/* line 260, ../sass/theme/_nortonscott.sass */
-.navy-section {
-  background-color: #3b475a;
-  padding: 1.25rem;
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-
-/* line 266, ../sass/theme/_nortonscott.sass */
-label {
-  font-size: 1.25rem;
-}
-
-/* line 269, ../sass/theme/_nortonscott.sass */
-.gothic {
-  color: #333333;
-  font-family: "alternate-gothic-no-3-d";
-  text-transform: uppercase;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  line-spacing: 1px;
-}
-
-/* line 278, ../sass/theme/_nortonscott.sass */
-.reverse {
-  color: white;
-  font-family: "franklin-gothic-urw";
-  color: white;
-}
-
-/* line 285, ../sass/theme/_nortonscott.sass */
-strong {
-  color: #0d5397;
-}
-
-/* line 288, ../sass/theme/_nortonscott.sass */
-.breadcrumbs {
-  display: none;
-}
-
-/* line 291, ../sass/theme/_nortonscott.sass */
-.webform-confirmation p {
-  color: green;
-}
-/* line 295, ../sass/theme/_nortonscott.sass */
-.webform-confirmation p h2 {
-  padding-top: 1rem;
-}
-
-/* line 298, ../sass/theme/_nortonscott.sass */
+/* line 272, ../sass/theme/_nortonscott.sass */
 .button {
   background-color: #f2824c;
   font-family: "alternate-gothic-no-3-d";
@@ -10455,7 +10414,7 @@ strong {
   line-spacing: 1px;
 }
 
-/* line 307, ../sass/theme/_nortonscott.sass */
+/* line 281, ../sass/theme/_nortonscott.sass */
 .pager-load-more a {
   background-color: #f2824c;
   font-family: "alternate-gothic-no-3-d";
@@ -10466,36 +10425,58 @@ strong {
   line-spacing: 1px;
 }
 
-/* line 316, ../sass/theme/_nortonscott.sass */
+/* line 290, ../sass/theme/_nortonscott.sass */
 ul.pager-load-more {
   margin-top: 2.5rem;
   margin-bottom: 3.75rem;
 }
 
-/* line 324, ../sass/theme/_nortonscott.sass */
+/* line 294, ../sass/theme/_nortonscott.sass */
 .pager-load-more a:hover {
   background-color: #f2824c;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   opacity: 0.9;
 }
 
-/* line 328, ../sass/theme/_nortonscott.sass */
-.blue-gray {
-  color: #3b475a;
-}
-
-/* line 331, ../sass/theme/_nortonscott.sass */
+/* line 298, ../sass/theme/_nortonscott.sass */
 a.button:hover {
   background-color: #f4f4f4;
   color: #3b475a;
 }
 
-/* line 335, ../sass/theme/_nortonscott.sass */
+/* line 310, ../sass/theme/_nortonscott.sass */
+.block-bean-about-2 {
+  margin-top: -500px;
+}
+/* line 313, ../sass/theme/_nortonscott.sass */
+.block-bean-about-2 h2 {
+  font-family: "franklin-gothic-urw";
+  font-weight: 700;
+  font-style: italic;
+  padding-top: 5.5rem;
+  font-size: 2.75rem;
+  color: white;
+  text-align: center;
+  text-transform: none;
+}
+/* line 323, ../sass/theme/_nortonscott.sass */
+.block-bean-about-2 h3 {
+  color: white;
+  font-weight: 400;
+  font-size: 1.625rem;
+  padding-right: 1rem;
+}
+/* line 329, ../sass/theme/_nortonscott.sass */
+.block-bean-about-2 a.button {
+  margin-bottom: 60px;
+}
+
+/* line 332, ../sass/theme/_nortonscott.sass */
 .block-bean-learn-more {
   margin: 0 auto 0 auto;
 }
 
-/* line 338, ../sass/theme/_nortonscott.sass */
+/* line 337, ../sass/theme/_nortonscott.sass */
 .field-name-post-date, .field-name-node-link a {
   color: #3b475a;
   font-family: "alternate-gothic-no-3-d";
@@ -10504,34 +10485,55 @@ a.button:hover {
   line-spacing: 1px;
 }
 
-/* line 348, ../sass/theme/_nortonscott.sass */
+/* line 347, ../sass/theme/_nortonscott.sass */
 .views-field.views-field-title a h5:hover {
   color: #0d5397;
 }
 
-/* line 351, ../sass/theme/_nortonscott.sass */
+/* line 350, ../sass/theme/_nortonscott.sass */
 .field-name-node-link a {
   color: #0d5397;
 }
 
-/* line 354, ../sass/theme/_nortonscott.sass */
+/* line 353, ../sass/theme/_nortonscott.sass */
 .field-name-node-link {
   padding-top: 1rem;
   padding-bottom: 2.5rem;
+  display: none;
 }
 
-/* line 358, ../sass/theme/_nortonscott.sass */
+/* line 361, ../sass/theme/_nortonscott.sass */
+.file a {
+  color: white;
+}
+/* line 364, ../sass/theme/_nortonscott.sass */
+.file img {
+  height: 30px;
+  margin-left: -10px;
+}
+
+/* line 370, ../sass/theme/_nortonscott.sass */
+.form-required {
+  display: none;
+}
+
+/* line 373, ../sass/theme/_nortonscott.sass */
+label {
+  font-size: 1.25rem;
+}
+
+/* line 376, ../sass/theme/_nortonscott.sass */
 .block-webform h2 {
   color: white;
 }
 
-/* line 362, ../sass/theme/_nortonscott.sass */
+/* line 380, ../sass/theme/_nortonscott.sass */
 .block-bean-contact-info p,
 .block-bean-contact-info h4 {
   color: white;
   line-height: 1em;
 }
-/* line 367, ../sass/theme/_nortonscott.sass */
+/* line 385, ../sass/theme/_nortonscott.sass */
 .block-bean-contact-info h4 {
   font-weight: bold;
   font-size: 1.625rem;
@@ -10539,12 +10541,12 @@ a.button:hover {
   line-height: 1.5em;
 }
 
-/* line 374, ../sass/theme/_nortonscott.sass */
+/* line 391, ../sass/theme/_nortonscott.sass */
 .block-bean-contact-info {
   margin-top: 4.25rem;
 }
 
-/* line 378, ../sass/theme/_nortonscott.sass */
+/* line 394, ../sass/theme/_nortonscott.sass */
 .block-bean-client-login, .block-bean-partner-login {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -10552,7 +10554,7 @@ a.button:hover {
   margin-right: auto;
 }
 
-/* line 384, ../sass/theme/_nortonscott.sass */
+/* line 400, ../sass/theme/_nortonscott.sass */
 .block-bean-client-login a, .block-bean-partner-login a {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -10560,17 +10562,7 @@ a.button:hover {
   background-color: #616a79;
 }
 
-/* line 391, ../sass/theme/_nortonscott.sass */
-.file-size {
-  display: none;
-}
-
-/* line 394, ../sass/theme/_nortonscott.sass */
-.file a {
-  color: white;
-}
-
-/* line 422, ../sass/theme/_nortonscott.sass */
+/* line 431, ../sass/theme/_nortonscott.sass */
 textarea {
   background-color: #b1b5bd;
   float: right;
@@ -10579,12 +10571,12 @@ textarea {
   margin: 0;
 }
 
-/* line 427, ../sass/theme/_nortonscott.sass */
+/* line 436, ../sass/theme/_nortonscott.sass */
 .webform-client-form.webform-client-form-5 .webform-component {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 416, ../sass/theme/_nortonscott.sass */
+/* line 425, ../sass/theme/_nortonscott.sass */
 .webform-client-form.webform-client-form-5 .webform-component label {
   color: white;
   font-family: "alternate-gothic-no-3-d";
@@ -10593,7 +10585,7 @@ textarea {
   font-size: 1.25rem;
   width: 20%;
 }
-/* line 419, ../sass/theme/_nortonscott.sass */
+/* line 428, ../sass/theme/_nortonscott.sass */
 .webform-client-form.webform-client-form-5 .webform-component input.form-text, .webform-client-form.webform-client-form-5 .webform-component .form-textarea-wrapper {
   background-color: #b1b5bd;
   float: right;
@@ -10602,129 +10594,129 @@ textarea {
   margin: 0;
 }
 
-/* line 430, ../sass/theme/_nortonscott.sass */
+/* line 439, ../sass/theme/_nortonscott.sass */
 .secondary.button.form-submit {
   background-color: #f2824c;
   margin-left: 7.5rem;
   margin-top: 3.5rem;
   color: white;
 }
-/* line 436, ../sass/theme/_nortonscott.sass */
+/* line 445, ../sass/theme/_nortonscott.sass */
 .secondary.button.form-submit:hover {
   background-color: white;
   color: #3b475a;
 }
 
-/* line 454, ../sass/theme/_nortonscott.sass */
+/* line 463, ../sass/theme/_nortonscott.sass */
 .reveal-modal-bg a.modal-icon {
   position: absolute;
   top: 50%;
   color: white;
 }
 
-/* line 474, ../sass/theme/_nortonscott.sass */
+/* line 483, ../sass/theme/_nortonscott.sass */
 .reveal-modal h2 {
   text-align: center;
 }
 
-/* line 477, ../sass/theme/_nortonscott.sass */
+/* line 486, ../sass/theme/_nortonscott.sass */
 img.file-icon {
   padding-right: 10px;
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 486, ../sass/theme/_nortonscott.sass */
+  /* line 495, ../sass/theme/_nortonscott.sass */
   .name img {
     margin-left: 30px;
   }
 
-  /* line 489, ../sass/theme/_nortonscott.sass */
+  /* line 498, ../sass/theme/_nortonscott.sass */
   .block-bean h2 {
     margin-left: 10px;
   }
 
-  /* line 492, ../sass/theme/_nortonscott.sass */
+  /* line 501, ../sass/theme/_nortonscott.sass */
   .l-news {
     margin-left: 20px;
     margin-right: 40px;
     padding-right: 40px;
   }
 
-  /* line 497, ../sass/theme/_nortonscott.sass */
+  /* line 506, ../sass/theme/_nortonscott.sass */
   div.group-content.large-12 {
     margin-left: 30px;
     margin-right: 30px;
   }
 
-  /* line 501, ../sass/theme/_nortonscott.sass */
+  /* line 510, ../sass/theme/_nortonscott.sass */
   .block-bean-contact-info {
     margin-left: -30px;
     margin-top: -20px;
   }
 
-  /* line 505, ../sass/theme/_nortonscott.sass */
+  /* line 514, ../sass/theme/_nortonscott.sass */
   .small-block-grid-1 {
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* line 509, ../sass/theme/_nortonscott.sass */
+  /* line 518, ../sass/theme/_nortonscott.sass */
   a.button.small-4.small-centered.columns.learn-more {
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
 
-  /* line 513, ../sass/theme/_nortonscott.sass */
+  /* line 522, ../sass/theme/_nortonscott.sass */
   #block-bean-about-2 {
     margin-top: -550px;
     margin-bottom: 1rem;
   }
-  /* line 517, ../sass/theme/_nortonscott.sass */
+  /* line 526, ../sass/theme/_nortonscott.sass */
   #block-bean-about-2 a.button {
     margin-bottom: 0px;
   }
 
-  /* line 520, ../sass/theme/_nortonscott.sass */
+  /* line 529, ../sass/theme/_nortonscott.sass */
   .block-bean-about-2 h2, .block-bean-about-2 h3 {
     padding-top: 1rem;
   }
 
-  /* line 526, ../sass/theme/_nortonscott.sass */
+  /* line 535, ../sass/theme/_nortonscott.sass */
   .block-bean-about-about h2 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
 }
-/* line 530, ../sass/theme/_nortonscott.sass */
+/* line 539, ../sass/theme/_nortonscott.sass */
 label {
   width: 100%;
   float: none;
 }
 
-/* line 534, ../sass/theme/_nortonscott.sass */
+/* line 543, ../sass/theme/_nortonscott.sass */
 input.form-text, .form-textarea-wrapper {
   width: 100%;
   float: none;
 }
 
-/* line 538, ../sass/theme/_nortonscott.sass */
+/* line 547, ../sass/theme/_nortonscott.sass */
 textarea {
   width: 100%;
   float: none;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 546, ../sass/theme/_nortonscott.sass */
+  /* line 555, ../sass/theme/_nortonscott.sass */
   .name img {
     margin-left: 30px;
   }
 
-  /* line 549, ../sass/theme/_nortonscott.sass */
+  /* line 558, ../sass/theme/_nortonscott.sass */
   .block-bean h2 {
     margin-left: 15px;
   }
 
-  /* line 552, ../sass/theme/_nortonscott.sass */
+  /* line 561, ../sass/theme/_nortonscott.sass */
   .l-news {
     margin-left: 20px;
     margin-right: 40px;
