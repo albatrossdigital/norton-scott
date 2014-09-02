@@ -24,8 +24,7 @@
  * - http://smacss.com/
  */
 /* Theme specific variables. */
-/* line 30, ../sass/_variables.sass */
-font-face {
+@font-face {
   font-family: "icomoon";
   src: url("../assets/icomoon/fonts/icomoon.eot?pt91q0");
   src: url("../assets/icomoon/fonts/icomoon.eot?#iefixpt91q0") format("embedded-opentype"), url("../assets/icomoon/fonts/icomoon.woff?pt91q0") format("woff"), url("../assets/icomoon/fonts/icomoon.ttf?pt91q0") format("truetype"), url("../assets/icomoon/fonts/icomoon.svg?pt91q0#icomoon") format("svg");
@@ -10499,6 +10498,10 @@ a.button:hover {
 .field-name-node-link {
   padding-top: 1rem;
   padding-bottom: 2.5rem;
+}
+
+/* line 357, ../sass/theme/_nortonscott.sass */
+.file-size {
   display: none;
 }
 
@@ -10686,37 +10689,24 @@ img.file-icon {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-}
-/* line 539, ../sass/theme/_nortonscott.sass */
-label {
-  width: 100%;
-  float: none;
-}
 
-/* line 543, ../sass/theme/_nortonscott.sass */
-input.form-text, .form-textarea-wrapper {
-  width: 100%;
-  float: none;
+  /* line 539, ../sass/theme/_nortonscott.sass */
+  .webform-client-form.webform-client-form-5 .webform-component input.form-text, .webform-client-form.webform-client-form-5 .webform-component .form-textarea-wrapper {
+    width: 100%;
+  }
 }
-
-/* line 547, ../sass/theme/_nortonscott.sass */
-textarea {
-  width: 100%;
-  float: none;
-}
-
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 555, ../sass/theme/_nortonscott.sass */
+  /* line 544, ../sass/theme/_nortonscott.sass */
   .name img {
     margin-left: 30px;
   }
 
-  /* line 558, ../sass/theme/_nortonscott.sass */
+  /* line 547, ../sass/theme/_nortonscott.sass */
   .block-bean h2 {
     margin-left: 15px;
   }
 
-  /* line 561, ../sass/theme/_nortonscott.sass */
+  /* line 550, ../sass/theme/_nortonscott.sass */
   .l-news {
     margin-left: 20px;
     margin-right: 40px;
