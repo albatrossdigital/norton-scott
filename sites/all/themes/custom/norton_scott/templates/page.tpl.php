@@ -8,8 +8,9 @@
       <div class="contain-to-grid">
         <nav class="top-bar" data-topbar data-options="sticky">
           <ul class="title-area">
-            <li class="name" class="small-1 columns">
-            <img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></li> 
+            <li class="name" class="small-1 columns" data-magellan-arrival="home">
+              <a href="#home"><img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></a>
+            </li> 
             <!-- small menu   
             <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
             -->           
@@ -33,7 +34,8 @@
       
     <!-- Title, slogan and menu -->
     <?php if ($alt_header): ?>
-    <section class="row <?php print $alt_header_classes; ?>">
+    <a name="home"></a>
+    <section class="row <?php print $alt_header_classes; ?>" data-magellan-destination="home">
 
       <?php if ($linked_logo): print $linked_logo; endif; ?>
 
