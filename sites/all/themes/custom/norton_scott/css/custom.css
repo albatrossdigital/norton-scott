@@ -10689,42 +10689,24 @@ img.file-icon {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-}
-/* line 539, ../sass/theme/_nortonscott.sass */
-label {
-  width: 100%;
-  float: none;
-}
 
-/* line 543, ../sass/theme/_nortonscott.sass */
-input.form-text, .form-textarea-wrapper {
-  width: 100%;
-  float: none;
+  /* line 539, ../sass/theme/_nortonscott.sass */
+  .webform-client-form.webform-client-form-5 .webform-component input.form-text, .webform-client-form.webform-client-form-5 .webform-component .form-textarea-wrapper {
+    width: 100%;
+  }
 }
-
-/* line 547, ../sass/theme/_nortonscott.sass */
-textarea {
-  width: 100%;
-  float: none;
-}
-
-/* line 551, ../sass/theme/_nortonscott.sass */
-.form-textarea-wrapper {
-  width: 100%;
-}
-
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 556, ../sass/theme/_nortonscott.sass */
+  /* line 544, ../sass/theme/_nortonscott.sass */
   .name img {
     margin-left: 30px;
   }
 
-  /* line 559, ../sass/theme/_nortonscott.sass */
+  /* line 547, ../sass/theme/_nortonscott.sass */
   .block-bean h2 {
     margin-left: 15px;
   }
 
-  /* line 562, ../sass/theme/_nortonscott.sass */
+  /* line 550, ../sass/theme/_nortonscott.sass */
   .l-news {
     margin-left: 20px;
     margin-right: 40px;
