@@ -21,7 +21,7 @@
         <ul class="right">
             <li data-magellan-arrival="about"><a href="#about">About</a></li>
             <li data-magellan-arrival="case-studies"><a href="#case-studies">Case Studies</a></li>
-            <li data magellan-arrival="stories"><a href="#stories">News</a></li>
+            <li data-magellan-arrival="news"><a href="#news">News</a></li>
             <li data-magellan-arrival="contact"><a href="#contact">Contact</a></li>
         </ul>
     </section>
@@ -132,12 +132,12 @@
     </div>
     <!--/.l-case_studies -->
   <?php endif; ?>
-    
+   
   <?php if (!empty($page['news'])): ?>
     <!--/.news -->
   <div class="gray-section">
-    <a name="stories"></a>
-    <section class="l-news row" data-magellan-destination="stories">
+    <a name="news"></a>
+    <section class="l-news row" data-magellan-destination="news">
       <div class="medium-12 columns">
         <?php print render($page['news']); ?>
       </div>
