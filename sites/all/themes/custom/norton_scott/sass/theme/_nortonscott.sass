@@ -30,7 +30,7 @@
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 1px
+  letter-spacing: 1px
 
   
 .reverse 
@@ -75,7 +75,7 @@ strong
     padding-left: 23px
     padding-right: 23px
     padding-top: 10px
-    line-spacing: 1px
+    letter-spacing: 1px
    
    
 .top-bar-section 
@@ -101,7 +101,7 @@ strong
     margin-bottom: -15px
     color: $topbar-bg-color  
       
-  li.name.active 
+  li.name 
     a
       background-color: transparent
       border-bottom-style: none
@@ -110,16 +110,6 @@ strong
         background-color: transparent
         border-bottom-style: none
         
-    
-      img
-        background-color: transparent
-        border-bottom-style: none
-    
-        &:hover
-          background-color: transparent
-          border-bottom-style: none
-    
-      
 
 .name
   padding-top: 10px
@@ -141,13 +131,42 @@ video#bgvid
   width: auto
   height: auto
   z-index: -100
-  background: url(polina.jpg) no-repeat
+  background: url(crane.jpg) no-repeat
   background-size: cover
 
-    
 .bg-video h2
   font-family: $franklin
   text-transform: none
+    
+  
+.block-bean-about-2 
+  margin-top: -550px
+  
+  .field
+    margin-top: -50px
+  
+  h2
+    font-family: $franklin
+    font-weight: 700
+    font-style: italic
+    padding-top: $pad-4
+    font-size: $h1-font-size
+    color: $white
+    text-align: center
+    text-transform: none
+  
+  h3
+    color: $white
+    font-weight: 400
+    font-size: $h4-font-size
+    padding-right: $pad-1
+  
+  a.button
+    margin-bottom: 60px
+       
+.block-bean-learn-more
+  margin: 0 auto 0 auto
+
 
   
 
@@ -190,7 +209,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 4px
+  letter-spacing: 1px
   
 
 //buttons and links ***********************
@@ -200,7 +219,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 4px
+  letter-spacing: 1px
   font-size: $h5-font-size
   
 .button
@@ -210,7 +229,7 @@ h5
   text-transform: uppercase
   margin-top: $margin-3
   margin-bottom: $margin-3
-  line-spacing: 4px
+  letter-spacing: 1px
   
 .pager-load-more a
   background-color: $orange
@@ -219,7 +238,7 @@ h5
   text-transform: uppercase
   padding: 1.0625rem 2rem 1rem 2rem
   color: $white
-  line-spacing: 4px
+  letter-spacing: 1px
   
 ul.pager-load-more
   margin-top: $margin-2
@@ -240,34 +259,7 @@ a.button:hover
 
   
 
-//About section **********************
-.block-bean-about-2 
-  margin-top: -500px
-  
-  .field
-    margin-top: -50px
-  
-  h2
-    font-family: $franklin
-    font-weight: 700
-    font-style: italic
-    padding-top: $pad-4
-    font-size: $h1-font-size
-    color: $white
-    text-align: center
-    text-transform: none
-  
-  h3
-    color: $white
-    font-weight: 400
-    font-size: $h4-font-size
-    padding-right: $pad-1
-  
-  a.button
-    margin-bottom: 60px
-       
-.block-bean-learn-more
-  margin: 0 auto 0 auto
+
 
 
 //case studies section **********************
@@ -276,7 +268,7 @@ a.button:hover
   font-family: $alternate-gothic
   text-transform: uppercase
   font-size: $h5-font-size
-  line-spacing: 1px
+  letter-spacing: 1px
 
 .views-field.views-field-title
   a    
@@ -308,6 +300,18 @@ a.button:hover
 .view-display-id-block_1
   .group-middle
     margin-top: -.85rem
+      
+
+.block-views-news-block-1
+  padding-top: 1rem
+    
+  .views-row-odd, .views-row-even
+    margin-bottom: 6rem
+    
+    
+  .views-row-last
+    margin-bottom: 0rem
+    
      
 
 //Contact Form ***********************
@@ -316,7 +320,7 @@ a.button:hover
 
 label
   font-size: $form-label-font-size
-  line-spacing: 4px
+  letter-spacing: 1px
   
 .block-webform h2
   color: $white
@@ -325,7 +329,7 @@ label
   p,
   h4
     color: $white
-    line-height: 1em
+    line-height: .85
   
   h4
     font-weight: bold
@@ -337,8 +341,8 @@ label
   margin-top: 4.25rem
   
 .block-bean-client-login, .block-bean-partner-login
-  margin-top: 3rem
-  margin-bottom: 3rem
+  margin-top: 2rem
+  margin-bottom: 1rem
   margin-left: auto
   margin-right: auto
 
@@ -352,7 +356,7 @@ label
   color: $white
   font-family: $alternate-gothic
   text-transform: uppercase
-  line-spacing: 1px
+  letter-spacing: 1px
   font-size: $h5-font-size
   width: 20%
 
