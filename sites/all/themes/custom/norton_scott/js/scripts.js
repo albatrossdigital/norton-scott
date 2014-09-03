@@ -9,11 +9,11 @@
 $('.view-case-studies', context).once(function() {
   $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
     
-    var $prev = $('<a class="modal-icon" id="modal-prev">&lt;</a>');
+    var $prev = $('<a class="modal-icon" id="modal-prev"></a>');
     $prev.bind('click', function(e) {
       modalClick(e, -1);
     });
-    var $next = $('<a class="modal-icon" id="modal-prev">&gt;</a>');
+    var $next = $('<a class="modal-icon" id="modal-next"></a>');
     $next.bind('click', function(e) {
       modalClick(e, 1);6
     });
