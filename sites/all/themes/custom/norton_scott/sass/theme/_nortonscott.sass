@@ -111,13 +111,13 @@ strong
         border-bottom-style: none
         
     
-  img
-    background-color: transparent
-    border-bottom-style: none
+      img
+        background-color: transparent
+        border-bottom-style: none
     
-    &:hover
-      background-color: transparent
-      border-bottom-style: none
+        &:hover
+          background-color: transparent
+          border-bottom-style: none
     
       
 
@@ -180,6 +180,9 @@ h4
   line-height: $header-line-height
   font-weight: 400
   line-height: 1.55em
+  
+  em
+  padding-bottom: .5em
 
 h5
   color: $blue-gray
@@ -187,7 +190,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 2px
+  line-spacing: 4px
   
 
 //buttons and links ***********************
@@ -197,7 +200,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 2px
+  line-spacing: 4px
   font-size: $h5-font-size
   
 .button
@@ -207,7 +210,7 @@ h5
   text-transform: uppercase
   margin-top: $margin-3
   margin-bottom: $margin-3
-  line-spacing: 1px
+  line-spacing: 4px
   
 .pager-load-more a
   background-color: $orange
@@ -216,7 +219,7 @@ h5
   text-transform: uppercase
   padding: 1.0625rem 2rem 1rem 2rem
   color: $white
-  line-spacing: 1px
+  line-spacing: 4px
   
 ul.pager-load-more
   margin-top: $margin-2
@@ -240,6 +243,9 @@ a.button:hover
 //About section **********************
 .block-bean-about-2 
   margin-top: -500px
+  
+  .field
+    margin-top: -50px
   
   h2
     font-family: $franklin
@@ -295,6 +301,13 @@ a.button:hover
   img
     height: 30px
     margin-left: -10px
+    
+    
+//News **********************
+
+.view-display-id-block_1
+  .group-middle
+    margin-top: -.85rem
      
 
 //Contact Form ***********************
@@ -303,6 +316,7 @@ a.button:hover
 
 label
   font-size: $form-label-font-size
+  line-spacing: 4px
   
 .block-webform h2
   color: $white
@@ -410,8 +424,18 @@ textarea
         content: "\f054"
       
 .reveal-modal
+  padding-bottom: 5rem
   h2
     text-align: center
+    padding-top: 5rem
+      
+  p 
+    padding-left: 5rem
+    padding-right: 5rem
+      
+  .button
+    margin-left: 4.8rem
+      
   
 img.file-icon
   padding-right: 10px
