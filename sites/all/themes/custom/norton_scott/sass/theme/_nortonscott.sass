@@ -131,7 +131,7 @@ video#bgvid
   width: auto
   height: auto
   z-index: -100
-  background: url(crane.jpg) no-repeat
+  background: url(./sites/all/themes/custom/norton_scott/assets/crane.jpg) no-repeat
   background-size: cover
 
 .bg-video h2
@@ -429,6 +429,13 @@ textarea
       
 .reveal-modal
   padding-bottom: 5rem
+  
+  a
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    font-size: $h5-font-size
+    letter-spacing: 1px
+  
   h2
     text-align: center
     padding-top: 5rem
@@ -439,10 +446,19 @@ textarea
       
   .button
     margin-left: 4.8rem
+    
+  .file
+    color: $white
+    +icomoon
+
+    &:before
+      content: "\f019"
+      
+    
       
   
 img.file-icon
-  padding-right: 10px
+  display: none
   
 
   
@@ -476,9 +492,11 @@ img.file-icon
   a.button.small-4.small-centered.columns.learn-more
     padding-bottom: 0px
     margin-bottom: 0px
+    margin-right: 0px
+    padding-right: 0px
   
   #block-bean-about-2
-    margin-top: -550px
+    margin-top: -500px
     margin-bottom: $margin-1
     
     a.button
@@ -486,13 +504,12 @@ img.file-icon
     
   .block-bean-about-2 h2, .block-bean-about-2 h3
     padding-top: $pad-1
-    
-  button.block-bean-about-2
 
   
   .block-bean-about-about h2
     margin-top: 0px
     margin-bottom: 0px
+    
     
   .webform-client-form.webform-client-form-5 .webform-component input.form-text, .webform-client-form.webform-client-form-5 .webform-component .form-textarea-wrapper
     width: 100%
