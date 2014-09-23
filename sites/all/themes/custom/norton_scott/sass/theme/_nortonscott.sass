@@ -1,83 +1,3 @@
-//custom variables
-$orange: #f2824c 
-$navy: #0d5397
-$blue-gray: #3b475a
-$gray-light: #f4f4f4
-$gray-blue: #b1b5bd
-$gray-blue-dk: #616a79
-$white: #fff
-$gray-text: #333333
-$alternate-gothic: "alternate-gothic-no-3-d"
-$franklin: "franklin-gothic-urw"
-$pad-1: 1rem
-$pad-2: 2.5rem
-$pad-3: 3.75rem
-$pad-4: 5.5rem
-$margin-1: 1rem
-$margin-2: 2.5rem
-$margin-3: 3.75rem
-$margin-4: 5.5rem
-
-//override foundation settings//custom variables
-$orange: #f2824c 
-$navy: #0d5397
-$blue-gray: #3b475a
-$gray-light: #f4f4f4
-$gray-blue: #b1b5bd
-$white: #fff
-$gray-text: #333333
-$alternate-gothic: "alternate-gothic-no-3-d"
-$franklin: "franklin-gothic-urw"
-$pad-1: 1rem
-$pad-2: 2.5rem
-$pad-3: 3.75rem
-$pad-4: 5.5rem
-$margin-1: 1rem
-$margin-2: 2.5rem
-$margin-3: 3.75rem
-$margin-4: 5.5rem
-
-//override foundation settings
-$body-font-color: $gray-text
-$form-label-font-size: rem-calc(20)
-$h1-font-size: rem-calc(52)
-$h2-font-size: rem-calc(32)
-$h3-font-size: rem-calc(30)
-$h4-font-size: rem-calc(26)
-$h5-font-size: rem-calc(20)
-$h6-font-size: 1rem
-  
-$header-line-height: 1.4
-
-// We use these to style paragraphs
-$paragraph-font-family: $franklin
-$paragraph-font-weight: 400
-$paragraph-font-size: rem-calc(20)
-$paragraph-line-height: 1.6
-$body-font-color: $gray-text
-$form-label-font-size: rem-calc(20)
-$h1-font-size: rem-calc(44)
-$h2-font-size: rem-calc(32)
-$h3-font-size: rem-calc(30)
-$h4-font-size: rem-calc(26)
-$h5-font-size: rem-calc(20)
-$h6-font-size: 1rem
-  
-$header-line-height: 1.4
-
-// We use these to style paragraphs
-$paragraph-font-family: $franklin
-$paragraph-font-weight: 400
-$paragraph-font-size: rem-calc(20)
-$paragraph-line-height: 1.6
-
-// Background color for the top bar
-$topbar-bg-color: $blue-gray
-// $topbar-bg: $topbar-bg-color;
-
-
-
-
 .navy
   color: $navy
   
@@ -110,7 +30,7 @@ $topbar-bg-color: $blue-gray
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 1px
+  letter-spacing: 1px
 
   
 .reverse 
@@ -155,7 +75,7 @@ strong
     padding-left: 23px
     padding-right: 23px
     padding-top: 10px
-    line-spacing: 1px
+    letter-spacing: 1px
    
    
 .top-bar-section 
@@ -179,16 +99,17 @@ strong
     border-bottom-color: $orange
     border-bottom-width: 5px
     margin-bottom: -15px
-    color: $topbar-bg-color
-    
-  li.name.active a
-    background-color: transparent
-    border-bottom-style: none
-    
-  img
-    background-color: transparent
-    border-bottom-style: none
+    color: $topbar-bg-color  
       
+  li.name 
+    a
+      background-color: transparent
+      border-bottom-style: none
+      
+      &:hover
+        background-color: transparent
+        border-bottom-style: none
+        
 
 .name
   padding-top: 10px
@@ -210,13 +131,42 @@ video#bgvid
   width: auto
   height: auto
   z-index: -100
-  background: url(polina.jpg) no-repeat
+  background: url(./sites/all/themes/custom/norton_scott/assets/crane.jpg) no-repeat
   background-size: cover
 
-    
 .bg-video h2
   font-family: $franklin
   text-transform: none
+    
+  
+.block-bean-about-2 
+  margin-top: -550px
+  
+  .field
+    margin-top: -50px
+  
+  h2
+    font-family: $franklin
+    font-weight: 700
+    font-style: italic
+    padding-top: $pad-4
+    font-size: $h1-font-size
+    color: $white
+    text-align: center
+    text-transform: none
+  
+  h3
+    color: $white
+    font-weight: 400
+    font-size: $h4-font-size
+    padding-right: $pad-1
+  
+  a.button
+    margin-bottom: 60px
+       
+.block-bean-learn-more
+  margin: 0 auto 0 auto
+
 
   
 
@@ -249,6 +199,9 @@ h4
   line-height: $header-line-height
   font-weight: 400
   line-height: 1.55em
+  
+  em
+  padding-bottom: .5em
 
 h5
   color: $blue-gray
@@ -256,7 +209,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 2px
+  letter-spacing: 1px
   
 
 //buttons and links ***********************
@@ -266,7 +219,7 @@ h5
   text-transform: uppercase
   padding-top: $pad-1
   padding-bottom: $pad-1
-  line-spacing: 2px
+  letter-spacing: 1px
   font-size: $h5-font-size
   
 .button
@@ -276,7 +229,7 @@ h5
   text-transform: uppercase
   margin-top: $margin-3
   margin-bottom: $margin-3
-  line-spacing: 1px
+  letter-spacing: 1px
   
 .pager-load-more a
   background-color: $orange
@@ -285,7 +238,7 @@ h5
   text-transform: uppercase
   padding: 1.0625rem 2rem 1rem 2rem
   color: $white
-  line-spacing: 1px
+  letter-spacing: 1px
   
 ul.pager-load-more
   margin-top: $margin-2
@@ -306,31 +259,7 @@ a.button:hover
 
   
 
-//About section **********************
-.block-bean-about-2 
-  margin-top: -500px
-  
-  h2
-    font-family: $franklin
-    font-weight: 700
-    font-style: italic
-    padding-top: $pad-4
-    font-size: $h1-font-size
-    color: $white
-    text-align: center
-    text-transform: none
-  
-  h3
-    color: $white
-    font-weight: 400
-    font-size: $h4-font-size
-    padding-right: $pad-1
-  
-  a.button
-    margin-bottom: 60px
-       
-.block-bean-learn-more
-  margin: 0 auto 0 auto
+
 
 
 //case studies section **********************
@@ -339,7 +268,7 @@ a.button:hover
   font-family: $alternate-gothic
   text-transform: uppercase
   font-size: $h5-font-size
-  line-spacing: 1px
+  letter-spacing: 1px
 
 .views-field.views-field-title
   a    
@@ -364,6 +293,25 @@ a.button:hover
   img
     height: 30px
     margin-left: -10px
+    
+    
+//News **********************
+
+.view-display-id-block_1
+  .group-middle
+    margin-top: -.85rem
+      
+
+.block-views-news-block-1
+  padding-top: 1rem
+    
+  .views-row-odd, .views-row-even
+    margin-bottom: 6rem
+    
+    
+  .views-row-last
+    margin-bottom: 0rem
+    
      
 
 //Contact Form ***********************
@@ -372,6 +320,7 @@ a.button:hover
 
 label
   font-size: $form-label-font-size
+  letter-spacing: 1px
   
 .block-webform h2
   color: $white
@@ -380,7 +329,7 @@ label
   p,
   h4
     color: $white
-    line-height: 1em
+    line-height: .85
   
   h4
     font-weight: bold
@@ -392,8 +341,8 @@ label
   margin-top: 4.25rem
   
 .block-bean-client-login, .block-bean-partner-login
-  margin-top: 3rem
-  margin-bottom: 3rem
+  margin-top: 2rem
+  margin-bottom: 1rem
   margin-left: auto
   margin-right: auto
 
@@ -407,7 +356,7 @@ label
   color: $white
   font-family: $alternate-gothic
   text-transform: uppercase
-  line-spacing: 1px
+  letter-spacing: 1px
   font-size: $h5-font-size
   width: 20%
 
@@ -479,11 +428,37 @@ textarea
         content: "\f054"
       
 .reveal-modal
+  padding-bottom: 5rem
+  
+  a
+    font-family: $alternate-gothic
+    text-transform: uppercase
+    font-size: $h5-font-size
+    letter-spacing: 1px
+  
   h2
     text-align: center
+    padding-top: 5rem
+      
+  p 
+    padding-left: 5rem
+    padding-right: 5rem
+      
+  .button
+    margin-left: 4.8rem
+    
+  .file
+    color: $white
+    +icomoon
+
+    &:before
+      content: "\f019"
+      
+    
+      
   
 img.file-icon
-  padding-right: 10px
+  display: none
   
 
   
@@ -517,9 +492,11 @@ img.file-icon
   a.button.small-4.small-centered.columns.learn-more
     padding-bottom: 0px
     margin-bottom: 0px
+    margin-right: 0px
+    padding-right: 0px
   
   #block-bean-about-2
-    margin-top: -550px
+    margin-top: -500px
     margin-bottom: $margin-1
     
     a.button
@@ -527,13 +504,12 @@ img.file-icon
     
   .block-bean-about-2 h2, .block-bean-about-2 h3
     padding-top: $pad-1
-    
-  button.block-bean-about-2
 
   
   .block-bean-about-about h2
     margin-top: 0px
     margin-bottom: 0px
+    
     
   .webform-client-form.webform-client-form-5 .webform-component input.form-text, .webform-client-form.webform-client-form-5 .webform-component .form-textarea-wrapper
     width: 100%
