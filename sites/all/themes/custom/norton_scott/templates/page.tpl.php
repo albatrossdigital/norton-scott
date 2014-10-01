@@ -9,7 +9,7 @@
         <nav class="top-bar" data-topbar data-options="sticky">
           <ul class="title-area">
             <li class="name" class="small-1 columns" data-magellan-arrival="home">
-              <a href="#home"><img src="./sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></a>
+              <a href="#home"><img src="/sites/all/themes/custom/norton_scott/images/icon.png" alt="Norton Scott"></a>
             </li> 
             <!-- small menu   
             <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
