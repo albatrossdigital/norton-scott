@@ -83,10 +83,3 @@ features[user_permission][] = view private files
 features[variable][] = field_bundle_settings_file__image
 features[variable][] = field_bundle_settings_file__video
 features[variable][] = media_icon_base_directory
-
-; Information added by Drupal.org packaging script on 2014-04-02
-version = "7.x-2.0-beta1+9-dev"
-core = "7.x"
-project = "flight"
-datestamp = "1396464847"
-

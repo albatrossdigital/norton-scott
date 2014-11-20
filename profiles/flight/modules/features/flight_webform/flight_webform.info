@@ -52,10 +52,3 @@ features[variable][] = node_preview_webform
 features[variable][] = node_submitted_webform
 features[variable][] = pathauto_node_webform_pattern
 features_exclude[dependencies][ds] = ds
-
-; Information added by Drupal.org packaging script on 2014-04-02
-version = "7.x-2.0-beta1+9-dev"
-core = "7.x"
-project = "flight"
-datestamp = "1396464847"
-

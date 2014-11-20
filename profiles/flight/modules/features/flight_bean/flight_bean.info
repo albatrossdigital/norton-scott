@@ -58,10 +58,3 @@ features_exclude[dependencies][image] = image
 features_exclude[dependencies][media] = media
 features_exclude[field][bean-button-field_link] = bean-button-field_link
 features_exclude[field][bean-block-field_body] = bean-block-field_body
-
-; Information added by Drupal.org packaging script on 2014-04-02
-version = "7.x-2.0-beta1+9-dev"
-core = "7.x"
-project = "flight"
-datestamp = "1396464847"
-

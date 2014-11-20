@@ -44,7 +44,9 @@
 // hit all bootstrap inputs
 @mixin all-form-inputs($select: true)
   @if $select 
-    #{'select,'}
+    select
+      @content
+
   textarea,
   input[type="text"],
   input[type="password"],
@@ -188,32 +190,40 @@
 
 // border goes on rows, constrains to column width
 
-@mixin nice-row-border($margin: $column-gutter/2, $padding: 1em, $border: 1px solid $gray, $direction: bottom)
+@mixin nice-row-border($margin: $column-gutter/2, $padding: 1em, $border: 1px solid $gray, $direction: bottom, $hide: false)
   $child: last-child
   $selector: after
+  $pad-dir: top
 
   @if $direction == top
     $child: first-child
     $selector: before
+    $pad-dir: bottom
+
 
   &:#{$selector}
     +before-as-image(block)
     border-#{$direction}: $border
     margin-left: $margin
     margin-right: $margin
-
-    $pad-dir: top
-
-    @if $direction == top
-      $pad-dir: bottom
-    
     padding-#{$pad-dir}: $padding
     margin-#{$direction}: $padding
 
-  &:#{$child}:#{$selector}
-    margin-#{$direction}: $padding
-    border: 0
+  @if $hide != hidden
 
+    @if $hide
+      &:#{$hide}
+        margin-#{$direction}: 0
+        padding-#{$pad-dir}: 0
+        border: 0
+
+    @else 
+      &:#{$child}:#{$selector}
+        margin-#{$direction}: 0
+        padding-#{$pad-dir}: 0
+        border: 0
+
+      
 // centers an element
 @mixin centered()
   margin-right: auto
@@ -243,7 +253,7 @@
 
 // simple sprite
 @mixin image-sprite($x, $y, $img: "sprite.png", $repeat: no-repeat)
-  background-image: url(../images/#{$img})
+  background-image: image-url($img)
   background-position: $x $y
   background-repeat: $repeat
 

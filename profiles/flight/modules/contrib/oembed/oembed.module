@@ -14,13 +14,12 @@ require_once dirname(__FILE__) . '/oembed.filter.inc';
  * Implements hook_hook_info().
  */
 function oembed_hook_info() {
-  $hooks['oembed_request_alter'] = array(
-    'group' => 'oembed',
+  $hooks = array(
+    'oembed_request_alter',
+    'oembed_response_alter',
   );
-  $hooks['oembed_response_alter'] = array(
-    'group' => 'oembed',
-  );
-  return $hooks;
+
+  return array_fill_keys($hooks, array('group' => 'oembed'));
 }
 
 /**
@@ -87,8 +86,6 @@ function oembed_cron() {
  * Implements hook_menu().
  */
 function oembed_menu() {
-  $items = array();
-
   $items['admin/config/media/oembed'] = array(
     'title' => 'oEmbed',
     'description' => 'Settings for oEmbed',
@@ -126,7 +123,6 @@ function oembed_menu() {
  * the callback items to have a common menu item.
  */
 function oembed_menu_alter(&$items) {
-
   // Create a new menu item where all oembed export UIs will be local tasks by
   // copying the export UI's menu item that will become the default local task.
   if (!empty($items['admin/config/media/oembed/provider/default'])) {
@@ -140,12 +136,11 @@ function oembed_menu_alter(&$items) {
 /**
  * Implements of hook_theme().
  */
-function oembed_theme() {
-  $path = drupal_get_path('module', 'oembed') . '/theme';
+function oembed_theme($existing, $type, $theme, $path) {
   return array(
     'oembed' => array(
       'file' => 'oembed.theme.inc',
-      'path' => $path,
+      'path' => $path . '/theme',
       'variables' => array('embed' => NULL),
     ),
     'oembed__photo' => array(
@@ -167,7 +162,11 @@ function oembed_theme() {
  * Returns the provider for a url.
  *
  * @param string $url
- *  The url to get the provider for.
+ *   The url to get the provider for.
+ * @param array $matches
+ *   Array reference for providers that capture arguments from URL.
+ * @param string $role
+ *
  * @return mixed
  *  A valid callback or FALSE
  */
@@ -229,15 +228,17 @@ function oembed_providers_reset() {
  *   - 'maxheight'
  *       The maximum height of the embed, in pixels.
  *   Other keys may be supported by some providers (twitter, youtube, wordpress).
- * @return
- *   False or an object representing the embeddable data of the URL.
+ * @return bool|array
+ *   False or an array representing the embeddable data of the URL.
  */
 function oembed_get_data($url, $parameters = array()) {
   $matches = array();
   $parameters = array_filter($parameters);
+
   if ($plugin = oembed_get_provider($url, $matches)) {
     return oembed_oembed_fetch($plugin, $url, $matches, $parameters);
   }
+
   return FALSE;
 }
 
@@ -323,7 +324,6 @@ function oembed_oembed_fetch($plugin, $url, $matches, $parameters = array()) {
  * Implements hook_element_info().
  */
 function oembed_element_info() {
-
   // Standard oEmbed that changes its theme based on response.
   $types['oembed'] = array(
     '#theme' => 'oembed',
@@ -345,7 +345,6 @@ function oembed_element_info() {
     '#alt' => '',
     '#title' => NULL,
     '#attributes' => array(),
-
     '#embed' => NULL,
     '#parameters' => array(),
     '#pre_render' => array(
@@ -361,7 +360,6 @@ function oembed_element_info() {
  * Change oEmbed request into a thumbnail.
  */
 function oembed_pre_render_thumbnail($element) {
-
   // Only act when the oEmbed response is true.
   if (!empty($element['#printed'])) {
     return $element;
@@ -408,7 +406,6 @@ function oembed_pre_render_image_helper(&$element, $prefix = '') {
  * Rewrite the theme parameter based on the response.
  */
 function oembed_pre_render_retheme($element) {
-
   // Only act when the oEmbed response is true.
   if (!empty($element['#printed'])) {
     return $element;
@@ -416,6 +413,7 @@ function oembed_pre_render_retheme($element) {
 
   $embed = $element['#embed'];
   $element['#theme'] = 'oembed__'. $embed['type'] .'__'. implode('__', explode(':', $embed['provider'], 2));
+
   return $element;
 }
 
@@ -446,14 +444,13 @@ function oembed_pre_render_fetch($element) {
  * @param $parameters
  *   oEmbed request parameters.
  *
- * @return
+ * @return array
  *   A renderable array with the following keys and values:
  *   - #type: The passed-in element $type.
  *   - #url: The passed-in $url.
  *   - #parameters: The passed-in $parameters.
  */
 function oembed_render_element($type, $url, $parameters = array()) {
-
   return array(
     '#type' => $type,
     '#url' => $url,
@@ -471,9 +468,11 @@ function oembed_alt_attr($embed) {
   if (isset($embed['title'])) {
     $string = '@title';
     $options['@title'] = $embed['title'];
-  } else {
+  }
+  else {
     $string = 'Embedded @type';
   }
+
   if (isset($embed['provider_name'])) {
     $string .= ' on @provider_name';
     $options['@provider_name'] = $embed['provider_name'];
@@ -539,6 +538,7 @@ function oembed_preprocess_file_entity(&$vars, $hook) {
   if (isset($vars['file']->metadata['oembed'])) {
     $vars['oembed_response'] = $embed = $vars['file']->metadata['oembed'];
     $vars['classes_array'][] = 'oembed-'. $embed['type'];
+
     if (strpos($embed['provider'], ':')) {
       list($parent, $child) = explode(':', $embed['provider'], 2);
       $vars['classes_array'][] = 'oembed-'. $parent;
@@ -547,6 +547,7 @@ function oembed_preprocess_file_entity(&$vars, $hook) {
     else {
       $vars['classes_array'][] = 'oembed-'. $embed['provider'];
     }
+
     $vars['title_attributes_array']['class'][] = 'oembed-title';
 
     // This conflicts with default file_entity.tpl.php which hardcodes a class attribute.
@@ -573,6 +574,7 @@ function oembed_stream_wrappers() {
  */
 function oembed_file_formatter_view($file, $display, $langcode) {
   $scheme = file_uri_scheme($file->uri);
+
   if ($scheme == 'oembed') {
     $wrapper = file_stream_wrapper_get_instance_by_uri($file->uri);
 
@@ -615,13 +617,14 @@ function oembed_file_formatter_view($file, $display, $langcode) {
  */
 function oembed_remote_file_formatter_view($file, $display, $langcode) {
   $scheme = file_uri_scheme($file->uri);
-  if ($scheme == 'oembed') {
 
+  if ($scheme == 'oembed') {
     // URI of local copy of remote file must be stored because it may be
     // different from the oEmbed URLs. If the URL does not have a valid
     // extension, it will redirect to a URL that does.
     if (!isset($file->metadata['oembed_remote_file_image']) || !file_exists($file->metadata['oembed_remote_file_image'])) {
       $embed = $file->metadata['oembed'];
+
       if ($embed['type'] == 'photo' && !empty($embed['url'])) {
         $url = $embed['url'];
       }
@@ -641,16 +644,19 @@ function oembed_remote_file_formatter_view($file, $display, $langcode) {
             $url .= '/'. drupal_basename($result->redirect_url);
           }
         }
+
         $parsed_url = parse_url($url);
 
         // Store local copies of images using hostname, path and filename of source.
         $path = $parsed_url['host'];
         $path .= drupal_dirname($parsed_url['path']);
+
         if (substr($path, -1) != '/') {
           $path .= '/';
         }
 
         $filename = drupal_basename($parsed_url['path']);
+
         if (strpos($filename, '.') !== FALSE) {
           $filename = file_munge_filename($filename, 'jpg jpeg gif png', FALSE);
         }
@@ -659,9 +665,8 @@ function oembed_remote_file_formatter_view($file, $display, $langcode) {
         $local_uri = file_stream_wrapper_uri_normalize(file_default_scheme() . '://oembed/'. $path);
 
         if (!file_exists($local_uri)) {
-
           // Drupal dislikes protocol relative URL schemes. Everything should
-          // be accessible wihtout HTTPS.
+          // be accessible without HTTPS.
           if (strpos($url, '//') === 0) {
             $url = 'http:'. $url;
           }
@@ -674,7 +679,6 @@ function oembed_remote_file_formatter_view($file, $display, $langcode) {
           file_unmanaged_save_data($result->data, $local_uri);
         }
 
-        //
         $file->metadata['oembed_remote_file_image'] = $local_uri;
 
         // Redundantish. See file_entity_file_insert and related hooks.
@@ -709,6 +713,7 @@ function oembed_remote_file_formatter_view($file, $display, $langcode) {
       if ($image_file->filesize) {
         $image_file->metadata = image_get_info($image_file->uri);
         $image_file->filemime = $image_file->metadata['mime_type'];
+
         return file_entity_file_formatter_file_image_view($image_file, $display, $langcode);
       }
     }
@@ -720,6 +725,7 @@ function oembed_remote_file_formatter_view($file, $display, $langcode) {
  */
 function oembed_file_formatter_oembed_settings($form, &$form_state, $settings) {
   $element = array();
+
   $element['width'] = array(
     '#title' => t('Width'),
     '#type' => 'textfield',
@@ -738,6 +744,7 @@ function oembed_file_formatter_oembed_settings($form, &$form_state, $settings) {
     '#description' => t('Controls layering, transparency, and playback performance of content rendered by the Flash player. For more information, view <a href="http://kb2.adobe.com/cps/127/tn_12701.html#main_Using_Window_Mode__wmode__values_">Adobe\'s documentation</a>.'),
     '#default_value' => $settings['wmode'],
   );
+
   return $element;
 }
 
@@ -746,6 +753,7 @@ function oembed_file_formatter_oembed_settings($form, &$form_state, $settings) {
  */
 function oembed_file_formatter_oembed_thumbnail_settings($form, &$form_state, $settings) {
   $element = array();
+
   $element['width'] = array(
     '#title' => t('Width'),
     '#type' => 'textfield',
@@ -756,6 +764,7 @@ function oembed_file_formatter_oembed_thumbnail_settings($form, &$form_state, $s
     '#type' => 'textfield',
     '#default_value' => $settings['height'],
   );
+
   return $element;
 }
 
@@ -773,6 +782,7 @@ function oembed_cache_clear($fids) {
     ->execute();
 
   $files = file_load_multiple(array_keys($results['file']));
+
   foreach ($files as $file) {
     $wrapper = file_stream_wrapper_get_instance_by_uri($file->uri);
     $url = $wrapper->getExternalUrl();
@@ -784,13 +794,11 @@ function oembed_cache_clear($fids) {
 /**
  * Checks that the oEmbed response has required standard properties for its type.
  *
- * @param $file
+ * @param \stdClass $file
  *   A Drupal file object.
- * @param $embed
- *   An oEmbed response.
  *
- * @return
- *   An array. If the oEmbed response is invalid, it will contain an error message.
+ * @return array
+ *   If the oEmbed response is invalid, the array will contain at least one error message.
  */
 function oembed_file_validator_type(stdClass $file) {
   return oembed_validate_response($file->metadata['oembed']);
@@ -842,22 +850,28 @@ function oembed_validate_response($embed) {
 /**
  * Return a file entity for a URL. Create the file if necessary.
  *
- * @param type $url
- * @param type $create
- * @return type
+ * @param string $url
+ *   URL of oEmbed request.
+ * @param boolean $create
+ *   Flag to create the file entity if it does not already exist.
+ *
+ * @return \stdClass
  */
 function oembed_url_to_file($url, $create = FALSE) {
   $uri = 'oembed://'. drupal_encode_path($url);
   $file = file_uri_to_object($uri);
   $file->metadata = array();
+
   if (!isset($file->metadata['oembed'])) {
     $file->metadata['oembed'] = oembed_get_data($url);
   }
+
   // New URLs need to be validated before being saved.
   if ($create && !isset($file->fid)) {
     // Save the new file.
     file_save($file);
   }
+
   return $file;
 }
 

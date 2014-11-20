@@ -27,10 +27,3 @@ features[user_permission][] = use workbench_moderation needs review tab
 features[user_permission][] = view all unpublished content
 features[user_permission][] = view moderation history
 features[user_permission][] = view moderation messages
-
-; Information added by Drupal.org packaging script on 2014-04-02
-version = "7.x-2.0-beta1+9-dev"
-core = "7.x"
-project = "flight"
-datestamp = "1396464847"
-

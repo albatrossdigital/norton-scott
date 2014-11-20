@@ -10,16 +10,17 @@ api = "2"
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = "contrib"
 
-projects[admin_select][version] = "1.3"
+projects[admin_select][version] = "1.5"
 projects[admin_select][subdir] = "contrib"
 
-projects[email_registration][version] = "1.1"
+projects[email_registration][version] = "1.2"
 projects[email_registration][subdir] = "contrib"
 
 projects[filter_perms][version] = "1.0"
 projects[filter_perms][subdir] = "contrib"
 
-projects[bean][version] = "1.7"
+; Adds fix for bean cache not getting cleared on page save
+projects[bean][version] = "1.8"
 projects[bean][subdir] = "contrib"
 
 ; Custom contextual links
@@ -29,25 +30,25 @@ projects[ccl][subdir] = "contrib"
 projects[ctools][version] = "1.4"
 projects[ctools][subdir] = "contrib"
 
-projects[context][version] = "3.2"
+projects[context][version] = "3.3"
 projects[context][subdir] = "contrib"
 
 projects[menu_trail_by_path][version] = "2.0"
 projects[menu_trail_by_path][subdir] = "contrib"
 
-projects[devel][version] = "1.4"
+projects[devel][version] = "1.5"
 projects[devel][subdir] = "devel"
 
 projects[ds][version] = "2.6"
 projects[ds][subdir] = "contrib"
 
-projects[features][version] = "2.0"
+projects[features][version] = "2.2"
 projects[features][subdir] = "contrib"
 
-projects[email][version] = "1.2"
+projects[email][version] = "1.3"
 projects[email][subdir] = "contrib"
 
-projects[field_group][version] = "1.3"
+projects[field_group][version] = "1.4"
 projects[field_group][subdir] = "contrib"
 
 projects[link][version] = "1.2"
@@ -56,13 +57,13 @@ projects[link][subdir] = "contrib"
 projects[select_or_other][version] = "2.20"
 projects[select_or_other][subdir] = "contrib"
 
-projects[field_collection][version] = "1.0-beta5"
+projects[field_collection][version] = "1.0-beta7"
 projects[field_collection][subdir] = "contrib"
 
 projects[plupload][version] = "1.6"
 projects[plupload][subdir] = "contrib"
 
-projects[entity][version] = "1.3"
+projects[entity][version] = "1.5"
 projects[entity][subdir] = "contrib"
 
 projects[libraries][version] = "2.2"
@@ -83,7 +84,7 @@ projects[strongarm][subdir] = "contrib"
 projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
-projects[metatag][version] = "1.0-beta9"
+projects[metatag][version] = "1.2"
 projects[metatag][subdir] = "contrib"
 
 projects[page_title][version] = "2.7"
@@ -95,22 +96,19 @@ projects[google_analytics][subdir] = "contrib"
 projects[simplehtmldom][version] = "1.12"
 projects[simplehtmldom][subdir] = "contrib"
 
-projects[wysiwyg_template][version] = "2.10"
-projects[wysiwyg_template][subdir] = "contrib"
-
-projects[variable][version] = "2.4"
+projects[variable][version] = "2.5"
 projects[variable][subdir] = "contrib"
 
 projects[draggableviews][version] = "2.0"
 projects[draggableviews][subdir] = "contrib"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = "contrib"
 
-projects[admin_views][version] = "1.2"
+projects[admin_views][version] = "1.3"
 projects[admin_views][subdir] = "contrib"
 
 projects[media_inkfilepicker][version] = "1.0-beta1"
@@ -128,7 +126,7 @@ projects[geophp][subdir] = "contrib"
 projects[geocoder][version] = "1.2"
 projects[geocoder][subdir] = "contrib"
 
-projects[date][version] = "2.7"
+projects[date][version] = "2.8"
 projects[date][subdir] = "contrib"
 
 projects[entityreference][version] = "1.1"
@@ -143,7 +141,13 @@ projects[ckeditor_link][subdir] = "contrib"
 projects[ckeditor_link_file][version] = "1.3"
 projects[ckeditor_link_file][subdir] = "contrib"
 
-projects[menu_block][version] = "2.3"
+projects[image_resize_filter][version] = "1.14"
+projects[image_resize_filter][subdir] = "contrib"
+
+projects[advanced_link][version] = "1.3"
+projects[advanced_link][subdir] = "contrib"
+
+projects[menu_block][version] = "2.4"
 projects[menu_block][subdir] = "contrib"
 
 projects[menu_firstchild][version] = "1.1"
@@ -152,10 +156,10 @@ projects[menu_firstchild][subdir] = "contrib"
 projects[menu_trail_by_path][version] = "2.0"
 projects[menu_trail_by_path][subdir] = "contrib"
 
-projects[webform][version] = "4.0-beta3"
+projects[webform][version] = "4.0-rc6"
 projects[webform][subdir] = "contrib"
 
-projects[form_builder][version] = "1.4"
+projects[form_builder][version] = "1.5"
 projects[form_builder][subdir] = "contrib"
 
 projects[pathauto_persist][version] = "1.3"
@@ -179,16 +183,13 @@ projects[scheduler][subdir] = "contrib"
 projects[scheduler_workbench][version] = "1.2"
 projects[scheduler_workbench][subdir] = "contrib"
 
-projects[linkchecker][version] = "1.1"
+projects[linkchecker][version] = "1.2"
 projects[linkchecker][subdir] = "contrib"
-
-projects[magic][version] = "1.5"
-projects[magic][subdir] = "contrib"
 
 projects[underscore][version] = "2.1"
 projects[underscore][subdir] = "contrib"
 
-projects[advagg][version] = "2.4"
+projects[advagg][version] = "2.7"
 projects[advagg][subdir] = "contrib"
 
 projects[search_api][version] = "1.11"
@@ -197,22 +198,22 @@ projects[search_api][subdir] = "contrib"
 projects[search_api_solr][version] = "1.4"
 projects[search_api_solr][subdir] = "contrib"
 
-projects[facetapi][version] = "1.3"
+projects[facetapi][version] = "1.5"
 projects[facetapi][subdir] = "contrib"
 
 projects[share42][version] = "1.3"
 projects[share42][subdir] = "contrib"
 
-projects[breakpoints][version] = "1.1"
+projects[breakpoints][version] = "1.3"
 projects[breakpoints][subdir] = "contrib"
 
 projects[views_infinite_scroll][version] = "1.1"
 projects[views_infinite_scroll][subdir] = "contrib"
 
-projects[views_data_export][version] = "3.0-beta7"
+projects[views_data_export][version] = "3.0-beta8"
 projects[views_data_export][subdir] = "contrib"
 
-projects[options_element][version] = "1.10"
+projects[options_element][version] = "1.12"
 projects[options_element][subdir] = "contrib"
 
 projects[wysiwyg_filter][version] = "1.6-rc2"
@@ -230,7 +231,7 @@ projects[foundation_formatters][subdir] = "contrib"
 projects[xmlsitemap][version] = "2.0-rc2"
 projects[xmlsitemap][subdir] = "contrib"
 
-projects[multiform][version] = "1.0"
+projects[multiform][version] = "1.1"
 projects[multiform][subdir] = "contrib"
 
 projects[better_exposed_filters][version] = "3.0-beta4"
@@ -251,11 +252,11 @@ projects[migrate_d2d][subdir] = "migrate"
 projects[navbar][version] = "1.4"
 projects[navbar][subdir] = "contrib"
 
-projects[focal_point][version] = "1.0-alpha1"
+projects[focal_point][version] = "1.0-beta1"
 projects[focal_point][subdir] = "contrib"
 
-projects[edit][version] = "1.0"
-projects[edit][subdir] = "contrib"
+projects[quickedit][version] = "1.1"
+projects[quickedit][subdir] = "contrib"
 
 
 ; +++++ Modules to be evaluated for exclusion +++++
@@ -275,7 +276,7 @@ projects[override_node_options][subdir] = "contrib"
 projects[stringoverrides][version] = "1.8"
 projects[stringoverrides][subdir] = "contrib"
 
-projects[rules][version] = "2.6"
+projects[rules][version] = "2.7"
 projects[rules][subdir] = "contrib"
 
 projects[job_scheduler][version] = "2.0-alpha3"
@@ -290,7 +291,7 @@ projects[typekit][subdir] = "contrib"
 projects[shield][version] = "1.2"
 projects[shield][subdir] = "contrib"
 
-projects[og][version] = "2.5"
+projects[og][version] = "2.7"
 projects[og][subdir] = "contrib"
 
 
@@ -299,49 +300,63 @@ projects[og][subdir] = "contrib"
 ; * Best practice is to point to specific git commits.
 ; * Have a note for each of these explaining the feature (with links) that requires -dev branch
 
-; From Feb 6, 2014
+; Verified working Oct 4?
 ; Adds media/ckeditor integration
 projects[file_entity][version] = "2.x-dev"
 projects[file_entity][type] = "module"
 projects[file_entity][subdir] = "contrib"
 projects[file_entity][download][type] = "git"
-projects[file_entity][download][revision] = "e80b223"
-;projects[file_entity][download][revision] = "e80b223"  ; previous version that worked
+projects[file_entity][download][revision] = "1e037ad"
 projects[file_entity][download][branch] = "7.x-2.x"
 
-; From Feb 6, 2014
+; Verified working Oct 4?
 ; Adds media/ckeditor integration
+; Note we are holding on this commit because of an issue with the Edit button disappearing
+; See: https://drupal.org/comment/8608583#comment-8608583
 projects[media][version] = "2.x-dev"
 projects[media][type] = "module"
 projects[media][subdir] = "contrib"
 projects[media][download][type] = "git"
-projects[media][download][revision] = "6e9c99b"
-;projects[media][download][revision] = "103fc3a"  ; previous version that worked
+projects[media][download][revision] = "e4c529a"
 projects[media][download][branch] = "7.x-2.x"
 
-; From Jan 20, 2014
+; Oct 8 - switching to using ckeditor_media for media-ckeditor integration
 ; Adds media/ckeditor integration
-projects[ckeditor][version] = "1.x-dev"
+;projects[ckeditor][version] = "1.x-dev"
+;projects[ckeditor][subdir] = "contrib"
+;projects[ckeditor][download][type] = "git"
+;projects[ckeditor][download][revision] = "b29372f"
+;projects[ckeditor][download][branch] = "7.x-1.x"
+
+projects[ckeditor][version] = "1.15"
 projects[ckeditor][subdir] = "contrib"
-projects[ckeditor][download][type] = "git"
-projects[ckeditor][download][revision] = "bfa0909"
-;projects[ckeditor][download][revision] = "57245a9"  ; previous version that worked
-projects[ckeditor][download][branch] = "7.x-1.x"
+
+; From Oct 8, 2014: No offial release
+projects[ckeditor_media][version] = "1.x-dev"
+projects[ckeditor_media][type] = "module"
+projects[ckeditor_media][subdir] = "contrib"
+projects[ckeditor_media][download][type] = "git"
+projects[ckeditor_media][download][revision] = "15369b9"
+projects[ckeditor_media][download][branch] = "7.x-1.x"
 
 ; From Oct 13, 2013
 ; Add jQuery 1.10.x as an option: https://drupal.org/node/2023789
-projects[jquery_update][version] = "2.x-dev"
+;projects[jquery_update][version] = "2.x-dev"
+;projects[jquery_update][subdir] = "contrib"
+;projects[jquery_update][download][type] = "git"
+;projects[jquery_update][download][revision] = "65eecb0"
+;projects[jquery_update][download][branch] = "7.x-1.x"
+
+projects[jquery_update][version] = "2.4"
 projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][download][type] = "git"
-projects[jquery_update][download][revision] = "65eecb0"
-projects[jquery_update][download][branch] = "7.x-1.x"
+
 
 ; From Feb 19, 2014
 ; The official releases for this module are really old (2012)
 projects[oembed][version] = "2.x-dev"
 projects[oembed][subdir] = "contrib"
 projects[oembed][download][type] = "git"
-projects[oembed][download][revision] = "7afee29"
+projects[oembed][download][revision] = "8492b9f"
 projects[oembed][download][branch] = "7.x-1.x"
 
 ; From Feb 10, 2014
@@ -355,6 +370,9 @@ projects[feeds][download][branch] = "7.x-1.x"
 
 
 ; +++++ Modules No longer downloaded +++++
+
+;projects[magic][version] = "1.5"
+;projects[magic][subdir] = "contrib"
 
 ;projects[manualcrop][version] = "1.x-dev"
 ;projects[manualcrop][subdir] = "contrib"
@@ -386,16 +404,15 @@ projects[feeds][download][branch] = "7.x-1.x"
 ; * Themes
 ; *********************************************************************************
 
-projects[adminimal_theme][type] = "theme"
-projects[adminimal_theme][version] = "1.2"
-projects[adminimal_theme][subdir] = "contrib"
+;projects[adminimal_theme][type] = "theme"
+;projects[adminimal_theme][version] = "1.2"
+;projects[adminimal_theme][subdir] = "contrib"
 
 projects[zurb-foundation][type] = "theme"
-projects[zurb-foundation][version] = "5.0-alpha3"
+projects[zurb-foundation][download][type] = git
+projects[zurb-foundation][download][revision] = 511c618e22e3dfe1db66f8c49545b8cacb5c7bef
+projects[zurb-foundation][download][branch] = 7.x-5.x
 projects[zurb-foundation][subdir] = "contrib"
-
-
-
 
 
 ; *********************************************************************************
@@ -420,15 +437,18 @@ libraries[backbone][destination] = libraries
 
 ; CKEditor
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor%20for%20Drupal/edit/ckeditor_4.3.2_edit.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor%20for%20Drupal/edit/ckeditor_4.4.4_edit.zip"
 libraries[ckeditor][destination] = libraries
 libraries[ckeditor][directory_name] = ckeditor
 
+; @todo
+;http://download.ckeditor.com/bootstrapck/releases/bootstrapck_1.0_0.zip
+
 ; Plupload
-libraries[plupload][download][type] = get
-libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/1.5.7.zip"
-libraries[plupload][destination] = libraries
-libraries[plupload][directory_name] = plupload
+;libraries[plupload][download][type] = get
+;libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
+;libraries[plupload][destination] = libraries
+;libraries[plupload][directory_name] = plupload
 
 
 ; +++++ Libraries with license issues in flight-libraries.make +++++
@@ -492,53 +512,59 @@ libraries[plupload][directory_name] = plupload
 
 ; @todo: edit module, look at https://drupal.org/node/2125199
 
-; Minor tweak to CKEditor admin page
-projects[ckeditor][patch][2085245] = "http://drupal.org/files/ckeditor-fix-theme-path-on-admin-page.patch"
-
-; Fix media-CKEditor integration
-; This is from https://gist.github.com/brantwynn/8015543#file-ho-ho-ho-make
-; Linked to from media issue: http://drupal.org/node/1504696
-projects[ckeditor][patch][2159403] = "http://drupal.org/files/issues/ckeditor-accomodate-latest-media-changes-2159403-20_0.patch"
-
-; Fix FF/IE issues with media + CKEditor
-; Found as a link on https://drupal.org/comment/8312617#comment-8312617
-projects[media][patch][2164823] = "http://drupal.org/files/issues/media-browser-incompatibilities.patch"
-
-; Fix Issue with media and CKEditor ACF
-projects[media][patch][2177893] = http://drupal.org/files/issues/2177893-4-ckeditor4-media-plugin.patch
+; Fix CKEditor call to jQuery.browser
+projects[ckeditor][patch][2199995] = "http://drupal.org/files/issues/ckeditor-219995-jQuery_browser_test_deprecated-2.patch"
 
 ; Fix adding media to summaries
 ; Found as a link on https://drupal.org/comment/8312617#comment-8312617
+; Last checked Aug 25, 2014
 projects[media][patch][1995030] = "http://drupal.org/files/issues/media-7.x-2.x-wysiwyg-summary-support-1995030-6.patch"
 
 ; Allow us to specify file types on media admin page
-projects[ckeditor][patch][1649464] = "http://drupal.org/files/issues/ckeditor-hook_into_media_admin-1649464-8141819_0.patch"
+; Updated Aug 25, 2014
+projects[ckeditor][patch][1649464] = "http://drupal.org/files/issues/ckeditor-hook_into_media_admin-1649464-9.patch"
 
 ; Override block titles in Context
-projects[context][patch][795058] = "http://drupal.org/files/context-795058-override-block-titles-58.patch"
-
-; Patch to edit so annoying alert doesn't pop up if you hit refresh too fast
-projects[edit][patch][1830518] = "http://drupal.org/files/1830518-change-MENU_NOT_FOUND-to-continue-29.patch"
-
-; Add navbar support to admin_select
-projects[admin_select][patch][2085211] = "http://drupal.org/files/admin_select-support-for-navbar-2085211-4.patch"
-
-; Fix oembed module integration with Edit
-; @todo: removed because it was causing oembed warning messages.  Do we want this?
-projects[oembed][patch][] = "http://drupal.org/files/issues/1998164-3-oembed-Define_type_for_input_filter.patch"
+; Updated Aug 25, 2014
+projects[context][patch][795058] = "http://drupal.org/files/issues/795058-75-context-block-title-reroll.patch"
 
 ; Fix circular loops in redirect module when Title is changed
-projects[redirect][patch][1796596] = "http://drupal.org/files/issues/redirect.circular-loops.1796596-124.patch"
+projects[redirect][patch][1796596s] = "http://drupal.org/files/issues/redirect.circular-loops.1796596-124.patch"
 
-; Advanced aggregration module configurable IE css split
-projects[advagg][patch][2181209] = "http://drupal.org/files/issues/advagg-make_ie_selector_value_configurable.patch"
+; Make medium the default display suite and layout instead of large
+projects[zurb-foundation][patch][2237041] = "https://www.drupal.org/files/issues/zurb_foundation-2237041-default-layout-classes-3.patch"
 
-; Fix admin_menu in jQuery 1.10
-projects[admin_menu][patch][1961178] = "http://drupal.org/files/issues/admin_menu-ie6detect-1961178-2.patch"
+; Fix to add remove upload tab from ckeditor_media
+projects[ckeditor][patch][2355895] = "http://drupal.org/files/issues/ckeditor_media-image2-remove-upload-tab.patch"
+
+; ckeditor_media: Title and Alt tags don't come through when adding new images
+projects[ckeditor][patch][2345305] = "http://drupal.org/files/issues/Add-support-for-population-of-alt-title-attributes-2345305-1.patch"
 
 
 
 ; +++++ Patches No longer used +++++
+
+; Fix Issue with media and CKEditor ACF
+; Updated Aug 25, 2014
+; @t6odo: still needed? Oct 8 - switching to using ckeditor_media for media-ckeditor integration
+;projects[media][patch][2177893] = http://drupal.org/files/issues/media-ckeditor4-media-plugin-2177893-13.patch
+
+; Fix media z-index issue with Jquery.ui 1.10
+; Fixed Oct 4 2014
+;projects[media][patch][2272567] = "http://drupal.org/files/issues/media-dialog-zindex-2272567-1.patch"
+
+; Fix to add media edit button
+; Fixed Oct 4 2014
+;projects[media][patch][2192981] = http://drupal.org/files/issues/media-restore-edit-button-2192981-13.patch
+
+; Fix oembed module integration with Edit
+; @todo: removed because it was causing oembed warning messages.  Do we want this?
+; Rm Aug 25 (no longer using edit)
+;projects[oembed][patch][] = "http://drupal.org/files/issues/1998164-3-oembed-Define_type_for_input_filter.patch"
+
+; Add navbar support to admin_select
+; Committed Mar 1 https://drupal.org/node/2085211
+;projects[admin_select][patch][2085211] = "http://drupal.org/files/admin_select-support-for-navbar-2085211-4.patch"
 
 ; Fix ember in IE9
 ;projects[ember][patch][2074345] = "http://drupal.org/files/issues/ember_fade_in-2074345-15.patch"
@@ -553,6 +579,20 @@ projects[admin_menu][patch][1961178] = "http://drupal.org/files/issues/admin_men
 
 
 ;; NO LONGER USED MEDIA-CKEDITOR INTEGRATION
+	; Fix media-CKEditor integration
+	; This is from https://gist.github.com/brantwynn/8015543#file-ho-ho-ho-make
+	; Linked to from media issue: http://drupal.org/node/1504696
+	; Oct 4: This is in latest -dev
+	;projects[ckeditor][patch][2159403] = "http://drupal.org/files/issues/make_ckeditor_plugin-2159403-90.patch"
+
+	; Fix issue with Plugin checkboxes not showing up on CKEditor admin page
+	; May 12
+	;projects[media][patch][2158741] = http://drupal.org/files/issues/ckeditor-remove-external-plugin-declarations-8-alt.patch
+
+	; Minor tweak to CKEditor admin page
+	; May 12
+	;projects[ckeditor][patch][2085245] = "http://drupal.org/files/ckeditor-fix-theme-path-on-admin-page.patch"
+
 	; External plugin declarations are redundant.
 	; http://drupal.org/comment/8284591#comment-8284591
 	;projects[ckeditor][patch][2158741] = "http://drupal.org/files/issues/ckeditor-remove-external-plugin-declarations-1-alt.patch"
@@ -577,9 +617,6 @@ projects[admin_menu][patch][1961178] = "http://drupal.org/files/issues/admin_men
 	;projects[media][patch][1504696] = "http://drupal.org/files/issues/media-add-ckeditor-support-1504696-120.patch"
 
 
-; Add support for ckeditor module to wysiwyg_template
-; This has been added to wysiwyg_template-7.x-2.10
-;projects[wysiwyg_template][patch][1952614] = "http://drupal.org/files/wysiwyg_template-add-support-for-ckeditor-module-1952614-3.patch"
 
 ; Flexslider colorbox support
 ; @todo: do we want this?
@@ -591,3 +628,15 @@ projects[admin_menu][patch][1961178] = "http://drupal.org/files/issues/admin_men
 
 ; Wrap navbar in an id other than #navbar
 ;projects[navbar][patch][1757466] = "http://drupal.org/files/navbar-conflict-1757466-14.patch"
+
+
+; Patch to edit so annoying alert doesn't pop up if you hit refresh too fast
+;projects[edit][patch][1830518] = "http://drupal.org/files/1830518-change-MENU_NOT_FOUND-to-continue-29.patch"
+
+; Fix admin_menu in jQuery 1.10
+; Rm Aug 25, 2014
+projects[admin_menu][patch][1961178] = "http://drupal.org/files/issues/admin_menu-ie6detect-1961178-2.patch"
+
+; Advanced aggregration module configurable IE css split
+; Added to module Jun 2014
+;projects[advagg][patch][2181209] = "http://drupal.org/files/issues/advagg-make_ie_selector_value_configurable.patch"

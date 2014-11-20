@@ -36,13 +36,6 @@ function oembed_filter_info() {
       'maxheight' => '',
     ),
   );
-
-  // Add support for the edit module
-  if (module_exists('edit')) {
-    $filters['oembed_legacy']['type'] = FILTER_TYPE_TRANSFORM_REVERSIBLE;
-    $filters['oembed_legacy']['type'] = FILTER_TYPE_MARKUP_LANGUAGE;
-  }
-
   return $filters;
 }
 

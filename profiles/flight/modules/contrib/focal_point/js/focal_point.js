@@ -6,25 +6,27 @@
  */
 
 (function($) {
+  'use strict';
 
   /**
    * Focal Point indicator.
    */
   Drupal.behaviors.focalPointIndicator = {
     attach: function(context, settings) {
-      $(".focal-point-indicator", context).once(function(){
+      $(".focal-point-indicator", context).once(function() {
         // Set some variables for the different pieces at play.
         var $indicator = $(this);
         var $img = $(this).siblings('img');
-        var $fieldDelta = $(this).attr('data-delta');
-        var $fieldName = $(context).find('#file-entity-add-upload').length > 0 ? 'media' : $(this).attr('data-field-name');
-        var $field = $(".focal-point-" + $fieldName + '-' + $fieldDelta);
-        var $previewLink = $(".focal-point-preview-link-" + $fieldName + '-' + $fieldDelta);
+        var focalPointID = $(this).attr('id');
+        var $field = $('.focal-point[data-focal-point-id="' + focalPointID + '"]', context);
+        var $previewLink = $('.focal-point-preview-link[data-focal-point-id="' + focalPointID + '"]', context);
 
         // Hide the focal_point form item. We do this with js so that a non-js
         // user can still set the focal point values. Also, add functionality so
         // that if the indicator is double clicked, the form item is displayed.
-        $field.closest('.form-item').hide();
+        if (!$field.hasClass('error')) {
+          $field.closest('.form-item').hide();
+        }
         $indicator.dblclick(function() {
           $field.closest('.form-item').toggle();
         });
@@ -32,11 +34,15 @@
         // Set the position of the indicator on image load and any time the
         // field value changes. We use a bit of hackery to make certain that the
         // image is loaded before moving the crosshair. See http://goo.gl/B02vFO
-        $img.one('load', function(){
-          focalPointSetIndicator($indicator, $(this), $field);
-        }).each(function() {
-          if(this.complete) $(this).load();
-        });
+        // The setTimeout was added to ensure the focal point is set properly on
+        // modal windows. See http://goo.gl/s73ge.
+        setTimeout(function() {
+          $img.one('load', function(){
+            focalPointSetIndicator($indicator, $(this), $field);
+          }).each(function() {
+            if (this.complete) $(this).load();
+          });
+        }, 0);
 
         // Make the focal point indicator draggable and tell it to update the
         // appropriate field when it is moved by the user.

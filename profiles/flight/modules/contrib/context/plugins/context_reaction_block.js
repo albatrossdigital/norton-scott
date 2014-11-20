@@ -144,12 +144,12 @@ DrupalContextBlockForm = function(blockForm) {
           // Now add the title textfield.
           var title = '<div class="form-item form-type-textfield">',
               titleName = 'reactions[plugins][block][blocks][' + region + '][' + bid + '][title]';
-          title += '<span class="field-prefix">' + Drupal.t('Custom Title:') + '</span> ';
+          title += '<label class="form-label">' + Drupal.t('Custom Title') + '</label> ';
           title += '<input type="text" class="form-text block-title" maxlength="128" size="30" value="" name="' + titleName + '" >';
           title += '</div>';
 
           $(block).attr('id', $(this).attr('value')).addClass('draggable');
-          $(block).html("<td>" + text + "</td><td>" + title + "</td><td>" + select + "</td><td><a href='' class='remove'>X</a></td>");
+          $(block).html("<td></td><td>" + text + title + "</td><td>" + select + "</td><td><a href='' class='remove'>X</a></td>");
           // add block item to region
           //TODO : Fix it so long blocks don't get stuck when added to top regions and dragged towards bottom regions
           Drupal.tableDrag[base].makeDraggable(block);

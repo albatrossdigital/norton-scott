@@ -54,6 +54,15 @@ function form_beautifier_form_alter(&$form, $form_state, $form_id) {
 	    }
 	  }
 	}
+
+    // Foundation Multi Select
+  if (variable_get('form_beautifier_fnd_multi_enable', 0)) {
+    $include = explode(',', variable_get('form_beautifier_fnd_multi_include', '*'));
+    $exclude = explode(',', variable_get('form_beautifier_fnd_multi_exclude', ''));
+    if (((in_array($form['#id'], $include) || in_array($form_id, $include)) || in_array('*', $include)) && (empty($exclude) || !in_array($form_id, $exclude))) {
+      form_beautifier_add_fnd_multi($form);
+    }
+  }
 	
 	// Dropdown Select
 	if (variable_get('form_beautifier_drpdwn_enable', 0)) {
@@ -164,6 +173,19 @@ function form_beautifier_form_alter(&$form, $form_state, $form_id) {
     if (((in_array($form['#id'], $include) || in_array($form_id, $include)) || in_array('*', $include)) && (empty($exclude) || !in_array($form_id, $exclude))) {
       form_beautifier_add_select2($form);
     }
+  }
+}
+
+function form_beautifier_add_fnd_multi(&$form){
+  if ($path = drupal_get_path('module', 'form_beautifier')) {
+    $form['#attributes']['class'][] = 'zurb-multiselect';
+    $form['#attached']['js'][] = $path . '/js/zurb5-multiselect.js';
+    $form['#attached']['js'][] = $path . '/js/zurb-multiselect.js';
+    $settings = array(
+      'live'   => FALSE,
+      'filter' => FALSE
+    );
+    drupal_add_js(array('form_beautifier' => array('zurbmulti' => $settings)), 'setting');
   }
 }
 

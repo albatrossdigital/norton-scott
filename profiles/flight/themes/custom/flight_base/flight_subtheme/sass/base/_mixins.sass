@@ -1,4 +1,7 @@
-
+// import compass
+@import vendor/bourbon/dist/bourbon
+// get icons
+@import "components/fontawesome/fontawesome"
 
 //***********************************
 // START FLIGHT MIXINS
@@ -161,21 +164,6 @@
 // @mixin image-replace($width, $height, $left, $top, $img: "sprite.png", $repeat: no-repeat)
 
 
-// Compass sprite mixin, can be used inside media queries
-// http://compass-style.org/reference/compass/helpers/sprites/
-//
-//** $map: name of sprite map 
-//** $sprite: name of image file 
-//** $offset-x: x offset 
-//** $offset-y: y offset 
-//** $repeat: repeat settings 
-//** $height: true if auto set to size of image 
-//** $width: true if auto set to size of image 
-//** $hover: if hover effect insert name of hover sprite
-//
-// @mixin get-sprite($map, $sprite, $offset-x: 0, $offset-y: 0, $repeat: no-repeat, $height: true, $width: true, $hover: false)
-
-
 //***********************************
 // Animations
 //***********************************
@@ -218,6 +206,17 @@
 // @mixin spinner-core($dimensions, $border-color-inactive: $animation-rotation-border-color-inactive, $border-width: $animation-rotation-border-width)
 
 
+// Flight variables
+//
+// ******************************************************
+
+$animation-time: 0.75s
+$animation-rotation-border-color-inactive: $gray
+$animation-rotation-border-color: $gray-dark
+$animation-rotation-border-width: rem-calc(2)!default
+
++rotation-init
+
 //***********************************
 // END FLIGHT MIXINS
 // 
@@ -245,37 +244,6 @@
   /* IE7 */
   .clearfix *:first-child + html & 
     min-height: 1%
-
-
-//***********************************
-// Sprite Definitions
-//
-// Create folder in images/ called icons/ place any .png files in there,
-// and reference them by their file name
-//***********************************
-
-//@import "compass/utilities/sprites/base"
-
-//$disable-magic-sprite-selectors: true
-
-// Use these lines for traditional compass sprites
-// see http://compass-style.org/help/tutorials/spriting/
-//@import "icons/*.png";
-
-//@include all-icons-sprites;
-
-// Use this style for sprites inside media queries
-// for use with +get-sprite() mixin
-//$sprites: sprite-map("sprites/*.png")
-
-// shortcut for sprites
-@mixin s-image($sprite, $offset-x: 0, $offset-y: 0, $repeat: no-repeat, $height: true, $width: true, $hover: false)
-  +get-sprite($sprites, $sprite, $offset-x, $offset-y, $repeat, $height, $width, $hover)
-
-// shortcut for hover images
-@mixin s-image-hover($sprite, $hover: "#{$sprite}-hover")
-  +s-image($sprite, 0, 0, no-repeat, true, true, $hover)
-
 
 
 /***********************************
@@ -321,11 +289,23 @@
 %color-normal
   color: $body-font-color
 
-%color-link
+%color-link-color
   color: $anchor-font-color
 
-%color-hover
+%color-hover-color
   color: $anchor-font-color-hover
+
+%color-link
+  @extend %color-link-color
+
+  &:hover
+    @extend %color-hover-color
+
+%color-link-alt
+  @extend %color-link-color
+
+  &:hover
+    @extend %color-hover-color
 
 // fonts
 // -----------------------------------
@@ -449,6 +429,27 @@
         @if $icon
           position: absolute
           z-index: 2
+
+
+// Adds a webkit scrollbar
+@mixin webkit-scrollbar($color1, $color2, $width: emCalc(10), $height: emCalc(10), $radius-outer: 0, $radius-inner: 0)
+  
+  &::-webkit-scrollbar
+    background-color: $color2
+
+    &:vertical
+      width: $width
+
+    &:horizontal
+      height: $height
+
+  &::-webkit-scrollbar-thumb
+    border-radius: $radius-inner
+    background-color: $color1
+
+  &::-webkit-scrollbar-track
+    border-radius: $radius-outer
+    background-color: $color2
 
 
 //***********************************

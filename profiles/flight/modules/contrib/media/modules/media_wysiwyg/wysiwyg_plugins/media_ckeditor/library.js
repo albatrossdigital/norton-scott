@@ -60,9 +60,6 @@
         ckeditorInstance.plugins.media.mediaLegacyWrappers = true;
         wysiwygHTML = wysiwygHTML.replace(/<!--MEDIA-WRAPPER-START-(\d+)-->(.*?)<!--MEDIA-WRAPPER-END-\d+-->/gi, '');
       }
-      else if (hasWidgetSupport) {
-        wysiwygHTML = '<mediawrapper data="">' + wysiwygHTML + '</mediawrapper>';
-      }
 
       // Insert element. Use CKEDITOR.dom.element.createFromHtml to ensure our
       // custom wrapper element is preserved.

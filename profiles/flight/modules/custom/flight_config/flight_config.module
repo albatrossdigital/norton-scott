@@ -47,9 +47,24 @@ function flight_config_menu() {
     'type' => MENU_CALLBACK,
   );
 
+  // Legacy
   $items['me'] = array(
     'title' => 'Welcome',
     'page callback' => 'flight_config_me',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['user/me'] = array(
+    'title' => 'Welcome',
+    'page callback' => 'flight_config_me',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['user/me/edit'] = array(
+    'title' => 'Welcome',
+    'page callback' => 'flight_config_me_edit',
     'access callback' => 'user_is_logged_in',
     'type' => MENU_CALLBACK,
   );
@@ -85,6 +100,14 @@ function flight_config_me() {
 }
 
 /**
+ * Callback for the me page for logged in users.
+ **/
+function flight_config_me_edit() {
+  global $user;
+  drupal_goto('user/' . $user->uid . '/edit');
+}
+
+/**
  * Implements hook_user_presave()
  * Sets the user's admin_select value to navbar if it isn't already set.
  **/
@@ -101,6 +124,7 @@ function flight_config_user_presave(&$edit, $account, $category) {
 function flight_config_admin_paths_alter(&$paths) {
   $paths['import'] = TRUE;
   $paths['import/*'] = TRUE;
+  $paths['media/*/format-form'] = TRUE;
   return $paths;
 }
 
@@ -111,22 +135,44 @@ function flight_config_admin_paths_alter(&$paths) {
  **/
 function flight_config_page_alter(&$page) {
   if (module_exists('edit') && user_access('access in-place editing')) {
-    $page['page_bottom']['edit_trigger_link'] = edit_trigger_link();
+    /*$page['page_bottom']['edit_trigger_link'] = edit_trigger_link();
     $page['page_bottom']['edit_trigger_link']['#attributes']['class'][] = 'flight-config-edit-trigger-link';
     $page['page_bottom']['edit_trigger_link']['#attached']['css'][] = drupal_get_path('module', 'flight_config') . '/css/flight-config-edit-launcher.css';
     $page['page_bottom']['edit_trigger_link']['#href'] = '';
     $page['page_bottom']['edit_trigger_link']['#attributes']['onclick'] = 'return false;';
-
+	*/
+	
     // Fix errors with missing depends for CKEditor/media
     // From: https://drupal.org/node/2125199
+    /*
     module_load_include('inc', 'ckeditor', 'includes/ckeditor.lib');
     $input_formats = ckeditor_profiles_compile();
     drupal_add_js(array('ckeditor' => array('input_formats' => $input_formats, 'plugins' => array())), 'setting');
+    */
   }
 //
 //  if (module_exists('admin_menu')) {
 //    $page['page_bottom']['#attached']['css'][] = drupal_get_path('module', 'flight_config') . '/css/flight-config-admin-menu-skin.css';
 //  }
+}
+
+
+/**
+ * Implements hook_file_view().
+ * Provide a direct download to certain types of files (images, documents).
+ * This is really necessary because ckeditor_link_file only links to the file.
+ * @todo: move this to flight_media (need to have a config page first).
+ */
+function flight_config_file_view($file, $view_mode, $langcode) {
+  if (arg(0) === 'file') {
+    switch ($file->type) {
+      case 'document':
+      case 'image':
+        $url = file_create_url($file->uri);
+        drupal_goto($url);
+        break;
+    }
+  }
 }
 
 

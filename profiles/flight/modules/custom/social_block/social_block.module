@@ -495,7 +495,6 @@ function social_block_contents($which_block) {
       }
       else {
         drupal_add_js('//platform.twitter.com/widgets.js', 'external');
-        drupal_add_css(drupal_get_path('module', 'social_block') . '/css/social-block-twitter-widget.css');
         $widget_config['data-widget-id'] = $w_id;
       }
       // theme color
@@ -539,10 +538,8 @@ function social_block_contents($which_block) {
       if($w_limit = variable_get('social_block_' . $which_block . '_tweet_limit')) {
         $widget_config['data-tweet-limit'] = $w_limit;
       }
-      // image path
-      $img = '<img alt="loading" src="/' . drupal_get_path('module', 'social_block') . '/images/spinner.gif">';
       // build link
-      $output = l($img, 'http://twitter.com/' . $twitter, array('html' => TRUE, 'attributes' => $widget_config));
+      $output = l(t('Loading...'), 'http://twitter.com/' . $twitter, array('html' => TRUE, 'attributes' => $widget_config));
       // return themed content
       return theme('social_block_twitter_feed_wrapper', array('content' => $output, 'account' => $twitter, 'links' => variable_get('social_block_' . $which_block . '_links',  1)));
       break;

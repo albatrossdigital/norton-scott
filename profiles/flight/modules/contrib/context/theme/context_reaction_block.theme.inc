@@ -43,8 +43,8 @@ function theme_context_block_regions_form($vars) {
       $label = $form[$region][$id]['#value'];
       $remove = l(t('X'), $_GET['q'], array('fragment' => 'remove', 'attributes' => array('class' => array('remove'))));
       $row = array(
-        $label,
-        drupal_render($form[$region][$id]['title']),
+        '',
+        $label . drupal_render($form[$region][$id]['title']),
         drupal_render($form[$region][$id]['weight']),
         $remove,
       );

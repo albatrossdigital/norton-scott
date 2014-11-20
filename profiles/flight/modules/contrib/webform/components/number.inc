@@ -226,7 +226,10 @@ function theme_webform_number($variables) {
   // This IF statement is mostly in place to allow our tests to set type="text"
   // because SimpleTest does not support type="number".
   if (!isset($element['#attributes']['type'])) {
-    $element['#attributes']['type'] = 'number';
+    // HTML5 number fields are no long used pending better browser support.
+    // See issues #2290029, #2202905.
+    // $element['#attributes']['type'] = 'number';
+    $element['#attributes']['type'] = 'text';
   }
 
   // Step property *must* be a full number with 0 prefix if a decimal.
@@ -402,28 +405,17 @@ function _webform_analysis_number($component, $sids = array(), $single = FALSE) 
 
   $population = array();
   $submissions = 0;
-  $nonzero = 0;
-  $not_empty = 0;
+  $non_zero = 0;
+  $non_empty = 0;
   $sum = 0;
 
   $result = $query->execute();
   foreach ($result as $data) {
     $value = trim($data['data']);
-    if ($value == '') {
-      $number = 0.0;
-    }
-    else {
-      $number = $value * 1.0;
-    }
-
-    if ($value !== '') {
-      $not_empty++;
-    }
-
-    if ($number > 0) {
-      $nonzero++;
-      $sum += $number;
-    }
+    $number = (float)$value;
+    $non_empty += (integer)($value !== '');
+    $non_zero += (integer)($number != 0.0);
+    $sum += $number;
     $population[] = $number;
     $submissions++;
   }
@@ -431,10 +423,10 @@ function _webform_analysis_number($component, $sids = array(), $single = FALSE) 
 
   // Average and population count.
   if ($component['extra']['excludezero']) {
-    $average = $nonzero ? ($sum / $nonzero) : 0;
+    $average = $non_zero ? ($sum / $non_zero) : 0;
     $average_title = t('Average !mu excluding zeros/blanks', array('!mu' => $advanced_stats ? '(&mu;)' : ''));
     // Sample (sub-set of total population).
-    $population_count = $nonzero - 1;
+    $population_count = $non_zero - 1;
     $sigma = 'sd';
     $description = t('sample');
   }
@@ -451,8 +443,8 @@ function _webform_analysis_number($component, $sids = array(), $single = FALSE) 
   $average = _webform_number_format($component, $average);
   $sum = _webform_number_format($component, $sum);
 
-  $rows[] = array(t('Zero/blank'), ($submissions - $nonzero));
-  $rows[] = array(t('User entered value'), $not_empty);
+  $rows[] = array(t('Zero/blank'), ($submissions - $non_zero));
+  $rows[] = array(t('User entered value'), $non_empty);
 
   $other[] = array(t('Sum') . ($advanced_stats ? ' (&Sigma;)' : ''), $sum);
   $other[] = array($average_title, $average);
@@ -628,7 +620,7 @@ function _webform_validate_number($element, &$form_state) {
 
       // Step test.
       $starting_number = $element['#min'] ? $element['#min'] : 0;
-      if ($element['#step'] != 0 && webform_modulo($numeric_value - $starting_number, $element['#step']) != 0) {
+      if ($element['#step'] != 0 && webform_modulo($numeric_value - $starting_number, $element['#step']) != 0.0) {
         $samples = array(
           $starting_number,
           $starting_number + ($element['#step'] * 1),
@@ -781,7 +773,7 @@ function _webform_number_format($component, $value) {
  * Based on http://stackoverflow.com/questions/5917082/regular-expression-to-match-numbers-with-or-without-commas-and-decimals-in-text.
  */
 function webform_number_format_match($value, $point, $separator) {
-  return preg_match('/^([1-9](?:\d{0,2})(?:' . ($separator ? (preg_quote($separator, '/') . '?') : '') . '\d{3})*(?:' . preg_quote($point, '/') . '\d*[0-9])?|0?' . preg_quote($point, '/') . '\d*[1-9]|0)$/', $value);
+  return preg_match('/^-? ?\d{1,3}(?:' . ($separator ? (preg_quote($separator, '/') . '?') : '') . '\d{2,3})*(?:' . preg_quote($point, '/') . '\d+)?$/', $value);
 }
 
 /**
@@ -823,7 +815,7 @@ function webform_number_format($value, $decimals = NULL, $point = '.', $separato
  */
 function webform_number_standardize($value, $point) {
   // For simplicity, strip everything that's not the decimal point.
-  $value = preg_replace('/[^0-9' . preg_quote($point, '/') . ']/', '', $value);
+  $value = preg_replace('/[^\-0-9' . preg_quote($point, '/') . ']/', '', $value);
   // Convert the decimal point to a period.
   $value = str_replace($point, '.', $value);
   return $value;
@@ -835,5 +827,58 @@ function webform_number_standardize($value, $point) {
  * See https://drupal.org/node/1601968.
  */
 function webform_modulo($a, $b) {
-  return $a - $b * (($b < 0) ? ceil($a / $b) : floor($a / $b));
+  $modulo = $a - $b * (($b < 0) ? ceil($a / $b) : floor($a / $b));
+  if (webform_compare_floats($modulo, 0.0) == 0 || webform_compare_floats($modulo, $b) == 0) {
+    $modulo = 0.0;
+  }
+  return $modulo;
+}
+
+/**
+ * Compare two floats.
+ *
+ * See @link http://php.net/manual/en/language.types.float.php @endlink
+ *
+ * Comparison of floating point numbers for equality is surprisingly difficult,
+ * as evidenced by the references below. The simple test in this function works
+ * for numbers that are relatively close to 1E1. For very small numbers, it will
+ * show false equality. For very large numbers, it will show false inequality.
+ * Better implementations are hidered by the absense of PHP platform-specific
+ * floating point constants to properly set the minimum absolute and relative
+ * error in PHP.
+ *
+ * The use case for webform conditionals excludes very small or very large
+ * numeric comparisons.
+ *
+ * See @link http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm @endlink
+ * See @link http://floating-point-gui.de/errors/comparison/ @endlink
+ * See @link http://en.wikipedia.org/wiki/IEEE_754-1985#Denormalized_numbers @endlink
+
+ * @param $number_1 float
+ *   The first number.
+ * @param $number_2 float
+ *   The second number.
+ *
+ * @return int|null
+ *   < 0 if number_1 is less than number_2; > 0 if number_1 is greater than
+ *   number_2, 0 if they are equal, and NULL if either is not numeric.
+ */
+function webform_compare_floats($number_1, $number_2) {
+  if (!is_numeric($number_1) || !is_numeric($number_2)) {
+    return NULL;
+  }
+
+  $number_1 = (float)$number_1;
+  $number_2 = (float)$number_2;
+
+  $epsilon = 0.000001;
+  if (abs($number_1 - $number_2) < $epsilon) {
+    return 0;
+  }
+  elseif ($number_1 > $number_2) {
+    return 1;
+  }
+  else {
+    return -1;
+  }
 }

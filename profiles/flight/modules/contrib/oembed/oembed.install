@@ -86,3 +86,10 @@ function oembed_update_7001() {
   module_disable(array('oembedcore'));
   drupal_uninstall_modules(array('oembedcore'));
 }
+
+/**
+ * Rebuild the code registry in order to accommodate moved submodules.
+ */
+function oembed_update_7002() {
+  registry_rebuild();
+}

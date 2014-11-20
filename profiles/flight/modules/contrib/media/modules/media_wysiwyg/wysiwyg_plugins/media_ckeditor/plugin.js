@@ -36,10 +36,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
               data.node = data.node.$;
             }
             if (selection.getType() == CKEDITOR.SELECTION_TEXT) {
-              if (CKEDITOR.env.ie) {
+              if (CKEDITOR.env.ie && CKEDITOR.env.version < 10) {
                 data.content = selection.getNative().createRange().text;
               }
-
               else {
                 data.content = selection.getNative().toString();
               }
@@ -98,7 +97,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
         if (mediaPluginDefinition.mediaLegacyWrappers) {
           replacement = '<!--MEDIA-WRAPPER-START-$1-->$2<!--MEDIA-WRAPPER-END-$1-->';
         }
-        data = data.replace(/<mediawrapper data="(.*)">(.*?)<\/mediawrapper>/gi, replacement);
+        data = data.replace(/<mediawrapper data="(.*?)">(.*?)<\/mediawrapper>/gi, replacement);
         data = Drupal.media.filter.replacePlaceholderWithToken(data);
         return data;
       }
@@ -109,21 +108,24 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
         editor.widgets.add( 'mediabox',
         {
           button: 'Create a mediabox',
-          template: '<mediawrapper></mediawrapper>',
           editables: {},
           allowedContent: '*',
           upcast: function( element ) {
-            if (element.name != 'mediawrapper') {
-              // Ensure media tokens are converted to media placeholdes.
-              element.setHtml(prepareDataForWysiwygMode(element.getHtml()));
+            // Ensure media tokens are converted to media placeholders.
+            html = Drupal.media.filter.replaceTokenWithPlaceholder(element.getHtml());
+            // Only replace html if it's different
+            if (html != element.getHtml()) {
+              element.setHtml(html);
             }
-            return element.name == 'mediawrapper';
+            return element.hasClass('media-element');
           },
 
           downcast: function( widgetElement ) {
-            var token = prepareDataForSourceMode(widgetElement.getOuterHtml());
-            return new CKEDITOR.htmlParser.text(token);
-            return element.name == 'mediawrapper';
+            var token = Drupal.media.filter.replacePlaceholderWithToken(widgetElement.getOuterHtml());
+            if (token) {
+              return new CKEDITOR.htmlParser.text(token);
+            }
+            return false;
           }
         });
       }

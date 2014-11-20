@@ -14,6 +14,12 @@ function form_beautifier_settings() {
     '#description' => l('example', 'http://bit.ly/EtQfr', array('attributes' => array('target' => '_blank'))),
     '#default_value' => variable_get('form_beautifier_chk_rdio_enable', 0),
   );
+  $form['form_beautifier_enable']['form_beautifier_fnd_multi_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => 'Enable Foundation Multiselect',
+    '#description' => l('example', 'http://andreamariani.net/lab/zurbfoundation5-multiselect/', array('attributes' => array('target' => '_blank'))).  t("Note: this plugin requires Foundation 5"),
+    '#default_value' => variable_get('form_beautifier_fnd_multi_enable', 0),
+  );
   $form['form_beautifier_enable']['form_beautifier_drpdwn_enable'] = array(
     '#type' => 'checkbox',
     '#title' => 'Enable Dropdown quickfiltering',
@@ -118,6 +124,28 @@ function form_beautifier_settings() {
 	    '#description' => 'Use individual Form IDs separated by a comma to limit which forms this module DOES NOT affects. This value will override Enabled Form settings above.',
 	    '#default_value' => variable_get('form_beautifier_checkboxes_radios_exclude', ''),
 	  );  
+  }
+
+  // Settings for Foundation Multiselect
+  if (variable_get('form_beautifier_fnd_multi_enable', 0)) {
+    $form['form_beautifier_fnd_multi'] = array(
+      '#type' => 'fieldset',
+      '#title' => 'Dropdown Select',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['form_beautifier_fnd_multi']['form_beautifier_fnd_multi_include'] = array(
+      '#type' => 'textarea',
+      '#title' => 'Enabled Forms',
+      '#description' => 'Use individual Form IDs separated by a comma to limit which forms this module affects. <br >\'*\' specifies ALL FORMS.',
+      '#default_value' => variable_get('form_beautifier_fnd_multi_include', '*'),
+    );
+    $form['form_beautifier_fnd_multi']['form_beautifier_fnd_multi_exclude'] = array(
+      '#type' => 'textarea',
+      '#title' => 'Disabled Forms',
+      '#description' => 'Use individual Form IDs separated by a comma to limit which forms this module DOES NOT affects. This value will override Enabled Form settings above.',
+      '#default_value' => variable_get('form_beautifier_fnd_multi_exclude', ''),
+    );  
   }
   
   
